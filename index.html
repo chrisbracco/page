@@ -3,27 +3,26 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="CrGen — Consultoría boutique de arquitectura de datos empresarial (AaaS) en LATAM. Integramos SAP, Odoo, Salesforce, Excel y sistemas locales en un flujo auditable. No somos plataforma de crowdsourcing ni anotación de IA." />
+<meta name="description" content="CrGen — Consultoría boutique de arquitectura de datos empresarial en LATAM. Integramos SAP, Odoo, Salesforce, Excel y sistemas locales en un flujo auditable. No somos plataforma de crowdsourcing ni anotación de IA." />
 <meta name="keywords" content="arquitectura de datos, AaaS, automatización empresarial LATAM, integración SAP Odoo Salesforce, consultoría boutique, transformación digital, CrGen" />
 <meta name="author" content="CrGen" />
 <link rel="canonical" href="https://crgen.online/" />
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://chrisbracco.github.io/page/" />
-<meta property="og:title" content="CrGen — Arquitectura de Datos Empresarial · AaaS LATAM" />
+<meta property="og:title" content="CrGen — Arquitectura de Datos Empresarial para PYMEs LATAM" />
 <meta property="og:description" content="Consultoría boutique. Integramos sus sistemas existentes en un flujo auditable. Sin migrar, sin licencias forzadas." />
 <meta property="og:image" content="https://chrisbracco.github.io/page/assets/Logo.png" />
 <meta property="og:site_name" content="CrGen" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="CrGen — Arquitectura de Datos Empresarial · AaaS LATAM" />
+<meta name="twitter:title" content="CrGen — Arquitectura de Datos Empresarial para PYMEs LATAM" />
 <meta name="twitter:description" content="Consultoría boutique LATAM. No somos crowdsourcing ni anotación de IA." />
 <!-- Security headers (mitigan MIME-sniffing + leak de referrer + clickjacking) -->
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=(), payment=()">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com https://connect.facebook.net https://www.clarity.ms https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://api.web3forms.com https://api.counterapi.dev https://cloudflare-dns.com https://www.googleapis.com https://www.google-analytics.com https://*.clarity.ms https://*.facebook.net https://www.googletagmanager.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
-<title>CrGen — Arquitectura de Datos Empresarial · AaaS LATAM</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com https://connect.facebook.net https://www.clarity.ms https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://api.web3forms.com https://api.counterapi.dev https://www.google-analytics.com https://*.clarity.ms https://*.facebook.net https://www.googletagmanager.com; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<title>CrGen — Arquitectura de Datos Empresarial para PYMEs LATAM</title>
 <link rel="icon" href="assets/Logo.png" type="image/png">
 <!-- JSON-LD: ProfessionalService + WebSite + Services + Breadcrumb (anti-confusión CrowdGen/Appen) -->
 <script type="application/ld+json">
@@ -38,7 +37,7 @@
       "url": "https://crgen.online/",
       "logo": "https://crgen.online/assets/Logo.png",
       "image": "https://crgen.online/assets/Logo.png",
-      "description": "Consultoría boutique de arquitectura de datos empresarial (AaaS) en LATAM. Integra sistemas existentes (SAP, Odoo, Salesforce, Excel, ERPs locales) en un flujo único auditable.",
+      "description": "Consultoría boutique de arquitectura de datos empresarial en LATAM. Integra sistemas existentes (SAP, Odoo, Salesforce, Excel, ERPs locales) en un flujo único auditable.",
       "areaServed": [
         { "@type": "Place", "name": "Latin America" },
         { "@type": "Country", "name": "Venezuela" },
@@ -74,7 +73,7 @@
     },
     {
       "@type": "Service",
-      "name": "Atlas Documental (Nivel II - AaaS)",
+      "name": "Atlas Documental (Nivel II)",
       "provider": { "@id": "https://crgen.online/#org" },
       "description": "Atlas Documental · diccionario de datos + 1 conector ERP funcional + runbook + 30 días estabilización. Despliegue 3-5 semanas.",
       "areaServed": "Latin America",
@@ -179,6 +178,9 @@ body {
   background: var(--white);
   color: var(--black);
   overflow-x: hidden;
+  /* Sin el flash gris de Android ni los 300 ms de espera al tocar */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-user-select: none;
@@ -280,7 +282,9 @@ input, textarea, select, [contenteditable="true"] {
 }
 .marquee-track img { height: 40px; opacity: 0.8; filter: grayscale(100%); transition: filter 0.3s, opacity 0.3s; }
 .marquee-track svg { filter: grayscale(100%); transition: filter 0.3s; }
-.marquee-track img:hover, .marquee-track h3:hover svg { filter: grayscale(0%); opacity: 1; }
+@media (hover: hover) and (pointer: fine) {
+  .marquee-track img:hover, .marquee-track h3:hover svg { filter: grayscale(0%); opacity: 1; }
+}
 @keyframes scrollMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* Nav */
@@ -310,8 +314,15 @@ input, textarea, select, [contenteditable="true"] {
   font-weight: 600 !important;
 }
 .nav-pill:hover { opacity: 0.85; }
-@media (max-width: 920px) { .nav-links li:nth-child(-n+2) { display: none; } }
-@media (max-width: 680px) { .nav-links li:not(:last-child) { display: none; } }
+@media (max-width: 920px) {
+  .nav-links li:nth-child(-n+2) { display: none; }
+  .nav-links li.nav-keep { display: list-item; }
+}
+@media (max-width: 680px) {
+  .nav-links li:not(:last-child) { display: none; }
+  .nav-links li.nav-keep { display: list-item; }
+  .nav-links li.nav-keep a { padding: 6px 10px; font-size: 0.78rem; }
+}
 
 /* Section wrap */
 section { position: relative; z-index: 1; }
@@ -321,11 +332,6 @@ section { position: relative; z-index: 1; }
 @media (max-width: 480px) { .section-wrap { padding: 48px 16px; } }
 
 /* Typography */
-.eyebrow {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--gray-lt); margin-bottom: 20px;
-}
 h1 {
   font-size: clamp(2.8rem, 7vw, 5.4rem); font-weight: 800;
   letter-spacing: -0.05em; line-height: 1.0; color: var(--black); margin-bottom: 28px;
@@ -359,22 +365,12 @@ p { line-height: 1.65; color: var(--ink); letter-spacing: -0.005em; }
   display: grid; place-items: center; text-align: center;
 }
 .hero-inner { max-width: 880px; }
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 6px 16px 6px 10px; border-radius: 999px;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.7rem; font-weight: 600; color: var(--gray);
-  letter-spacing: 0.05em; text-transform: uppercase;
-  margin-bottom: 36px;
-}
-.badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #30d158; box-shadow: 0 0 0 3px rgba(48,209,88,.22); }
 .hero-sub {
   font-size: clamp(1.05rem, 2.1vw, 1.28rem); color: var(--gray);
   line-height: 1.65; max-width: 600px; margin: 0 auto 44px;
 }
 @media (max-width: 480px) { 
   .hero-inner { padding-top: 20px; }
-  .hero-badge { margin-bottom: 24px; padding: 6px 12px; font-size: 0.65rem; }
   .hero-sub { margin-bottom: 32px; font-size: 1rem; }
   .cta-row { flex-direction: column; width: 100%; }
   .cta-row .btn { width: 100%; justify-content: center; }
@@ -507,14 +503,12 @@ p { line-height: 1.65; color: var(--ink); letter-spacing: -0.005em; }
 .compare-fill { position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: currentColor; opacity: 0.4; transform: scaleX(0); transform-origin: 0 50%; }
 .compare-cell.bad .compare-fill { background: #c44536; opacity: 0.55; }
 .compare-cell.good .compare-fill { background: #34C759; opacity: 0.65; }
-@keyframes heroBadgeBreath { 0%,100% { box-shadow: 0 0 0 0 rgba(0,0,0,0.05), 0 0 12px rgba(0,0,0,0.04); } 50% { box-shadow: 0 0 0 6px rgba(0,0,0,0.04), 0 0 28px rgba(0,0,0,0.10); } }
-.hero-badge { animation: heroBadgeBreath 3.6s ease-in-out infinite; }
 @keyframes featuredPulse { 0%,100% { box-shadow: 0 12px 32px rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.06); } 50% { box-shadow: 0 18px 50px rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.10), 0 0 30px rgba(52,199,89,0.18); } }
 .plan-featured.crystal-3 { animation: featuredPulse 3.2s ease-in-out infinite; }
 .tilt-card { transform-style: preserve-3d; will-change: transform; transition: box-shadow 0.3s ease; }
 .tilt-card > * { transform: translateZ(0); }
 @media (prefers-reduced-motion: reduce) {
-  .hero-badge, .plan-featured.crystal-3 { animation: none !important; }
+  .plan-featured.crystal-3 { animation: none !important; }
   .chart-sheen, .compare-fill { display: none; }
   .tilt-card { transform: none !important; }
 }
@@ -726,11 +720,6 @@ footer {
 footer a { color: var(--gray); text-decoration: none; }
 footer a:hover { color: var(--black); }
 .footer-links { display: flex; gap: 24px; align-items: center; }
-.visit-counter { display:inline-flex; align-items:center; gap:8px; padding:6px 14px; border:1px solid var(--rule); border-radius:999px; font-size:0.74rem; font-weight:600; color:var(--gray); background:rgba(255,255,255,0.55); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); letter-spacing:0.04em; text-transform:uppercase; }
-.visit-counter .vc-dot { width:7px; height:7px; border-radius:50%; background:#34C759; box-shadow:0 0 0 0 rgba(52,199,89,0.55); animation: vcPulse 2.2s infinite; }
-.visit-counter .vc-num { font-family:'JetBrains Mono', ui-monospace, monospace; color:var(--black); font-weight:700; letter-spacing:0.02em; text-transform:none; }
-@keyframes vcPulse { 0%{box-shadow:0 0 0 0 rgba(52,199,89,0.55);} 70%{box-shadow:0 0 0 9px rgba(52,199,89,0);} 100%{box-shadow:0 0 0 0 rgba(52,199,89,0);} }
-
 /* Scroll reveal */
 .sr { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .sr.in { opacity: 1; transform: translateY(0); }
@@ -760,7 +749,7 @@ footer a:hover { color: var(--black); }
 @media (max-width: 900px) {
   /* backdrop-filter es el peor enemigo del scroll en Android mid-range */
   .crystal-1, .crystal-2, .crystal-3,
-  .audit-overlay, .visit-counter {
+  .audit-overlay {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }
@@ -794,262 +783,139 @@ footer a:hover { color: var(--black); }
 }
 
 /* content-visibility: navegador salta render de secciones off-screen */
-#senales, #pilares, #metodo, #calc, #radar, #planes, #lead {
+#pilares, #metodo, #planes, #lead {
   content-visibility: auto;
   contain-intrinsic-size: 800px;
 }
 
-/* === RADAR OPERATIVO (Nivel 0 ampliado) === */
-#radar { padding-top: 0; }
-.radar-app {
-  border-radius: 24px;
-  padding: 36px 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-.radar-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr auto;
-  gap: 14px;
-  align-items: end;
-}
-.radar-form > div { display: flex; flex-direction: column; gap: 6px; }
-.radar-form label {
-  font-size: 0.7rem; font-weight: 700; color: var(--gray);
-  letter-spacing: 0.05em; text-transform: uppercase;
-}
-.radar-form input,
-.radar-form select {
-  width: 100%;
-  padding: 14px 16px;
-  border-radius: 12px;
-  border: 1px solid var(--rule);
-  background: rgba(255,255,255,0.85);
-  font-family: inherit;
-  font-size: 0.95rem;
-  color: var(--black);
-  outline: none;
-  transition: border-color 0.18s, box-shadow 0.18s;
-}
-.radar-form input:focus,
-.radar-form select:focus {
-  border-color: var(--black);
-  box-shadow: 0 0 0 3px rgba(29,29,31,0.08);
-}
-#rd-go {
-  padding: 14px 28px;
-  border-radius: 12px;
-  background: var(--black);
-  color: #fff;
-  border: none;
-  font-family: inherit;
-  font-weight: 800;
-  font-size: 0.95rem;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: transform 0.18s, box-shadow 0.18s, opacity 0.18s;
-}
-#rd-go:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
-#rd-go:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-.radar-disclaimer {
-  font-size: 0.78rem;
-  color: var(--gray-lt);
-  text-align: center;
-  letter-spacing: 0.02em;
-}
-.radar-scan {
-  padding: 32px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.scan-bar {
-  height: 4px; width: 100%;
-  background: rgba(0,0,0,0.06);
-  border-radius: 999px; overflow: hidden;
-  margin-bottom: 16px;
-}
-.scan-bar > span {
-  display: block; height: 100%; width: 0%;
-  background: linear-gradient(90deg, #1d1d1f, #6e6e73);
-  transition: width 0.4s ease;
-}
-.scan-line {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.86rem;
-  color: var(--gray);
-  display: flex; align-items: center; gap: 10px;
-  opacity: 0.4;
-  transition: opacity 0.3s, color 0.3s;
-}
-.scan-line.active { opacity: 1; color: var(--black); }
-.scan-line.done { opacity: 0.7; color: #34C759; }
-.scan-line .dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--gray-xlt);
-  flex-shrink: 0;
-}
-.scan-line.active .dot { background: var(--black); animation: scanPulse 1s ease-in-out infinite; }
-.scan-line.done .dot { background: #34C759; }
-@keyframes scanPulse {
-  0%,100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.4); opacity: 0.5; }
-}
-.radar-result {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 32px;
-  align-items: start;
-}
-.rd-score-card {
-  display: flex; flex-direction: column; align-items: center;
-  padding: 24px;
-  border: 1px solid var(--rule);
-  border-radius: 18px;
-  background: #fff;
-}
-.rd-score-num {
-  font-size: 4.2rem; font-weight: 800; letter-spacing: -0.06em;
-  color: var(--black); line-height: 1;
-  display: flex; align-items: baseline; gap: 4px;
-}
-.rd-score-num small { font-size: 1.1rem; color: var(--gray-lt); font-weight: 600; }
-.rd-score-label {
-  font-size: 0.72rem; color: var(--gray); font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  margin-top: 6px; text-align: center;
-}
-.rd-score-tag {
-  display: inline-block; margin-top: 14px;
-  padding: 6px 14px; border-radius: 999px;
-  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-.rd-score-tag.bad  { background: rgba(196,69,54,0.1); color: #c44536; }
-.rd-score-tag.mid  { background: rgba(255,159,10,0.12); color: #d97a00; }
-.rd-score-tag.good { background: rgba(52,199,89,0.12); color: #1f8a3a; }
-.rd-dims { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.rd-dim {
-  padding: 14px 16px;
-  background: rgba(0,0,0,0.025);
-  border-radius: 12px;
-}
-.rd-dim-name {
-  font-size: 0.7rem; font-weight: 700; color: var(--gray);
-  letter-spacing: 0.05em; text-transform: uppercase;
-  display: flex; justify-content: space-between; align-items: baseline;
-  margin-bottom: 6px;
-}
-.rd-dim-name b { font-size: 1.1rem; color: var(--black); letter-spacing: -0.02em; }
-.rd-dim-bar {
-  height: 6px; background: rgba(0,0,0,0.06); border-radius: 999px; overflow: hidden;
-}
-.rd-dim-bar > span {
-  display: block; height: 100%;
-  background: var(--black);
-  border-radius: 999px;
-  transition: width 0.8s cubic-bezier(0.34,1.56,0.64,1);
-}
-.rd-findings {
-  grid-column: 1 / -1;
-  padding: 24px 28px;
-  background: #fff;
-  border: 1px solid var(--rule);
-  border-radius: 18px;
-}
-.rd-findings h4 {
-  font-size: 0.78rem; font-weight: 700; color: var(--gray);
-  letter-spacing: 0.08em; text-transform: uppercase;
-  margin-bottom: 14px;
-}
-.rd-findings h4 b { color: var(--accent-warn); }
-#rd-findings-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
-#rd-findings-list li {
-  padding: 14px 16px 14px 44px;
-  background: rgba(196,69,54,0.04);
-  border-left: 3px solid var(--accent-warn);
-  border-radius: 8px;
-  font-size: 0.94rem; color: var(--black); line-height: 1.5;
-  position: relative;
-}
-#rd-findings-list li::before {
-  content: "!"; position: absolute; left: 14px; top: 12px;
-  width: 20px; height: 20px; border-radius: 50%;
-  background: var(--accent-warn); color: #fff;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 800; font-size: 0.75rem;
-}
-.rd-locked {
-  margin-top: 16px;
-  padding: 14px 16px 14px 44px;
-  background: rgba(0,0,0,0.03);
-  border-left: 3px solid var(--gray-xlt);
-  border-radius: 8px;
-  font-size: 0.94rem; color: var(--gray); line-height: 1.5;
-  position: relative;
-}
-.rd-locked::before {
-  content: "\1F512"; position: absolute; left: 12px; top: 12px;
-  font-size: 1rem;
-}
-#rd-cta {
-  grid-column: 1 / -1;
-  width: 100%;
-  padding: 18px 28px;
-  background: var(--black);
-  color: #fff;
-  border: none;
-  border-radius: 14px;
-  font-family: inherit;
-  font-weight: 800;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: transform 0.18s, box-shadow 0.18s;
-}
-#rd-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,0.2); }
-.rd-error {
-  padding: 14px 18px;
-  background: rgba(196,69,54,0.08);
-  border-radius: 12px;
-  color: var(--accent-warn);
-  font-size: 0.9rem;
-  text-align: center;
-}
-/* Bloque "Qué analiza el Radar" — culturalmente claro para LATAM 20-55 */
-.radar-explain {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
-  margin-top: 8px;
-  padding: 22px 24px;
-  border-top: 1px solid var(--rule);
-}
-.radar-explain h5 {
-  grid-column: 1 / -1;
-  font-size: 0.74rem; font-weight: 700; color: var(--gray);
-  letter-spacing: 0.1em; text-transform: uppercase;
-  margin-bottom: 4px;
-}
-.rx-item { display: flex; gap: 12px; align-items: flex-start; }
-.rx-icon {
-  flex-shrink: 0; width: 36px; height: 36px;
-  border-radius: 10px; background: rgba(0,0,0,0.05);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem;
-}
-.rx-text { font-size: 0.86rem; line-height: 1.5; color: var(--gray); }
-.rx-text b { display: block; color: var(--black); margin-bottom: 2px; font-size: 0.92rem; font-weight: 800; letter-spacing: -0.01em; }
 
-@media (max-width: 600px) {
-  .radar-explain { padding: 18px; }
+/* ═══════════════════════════════════════════════════════════════════
+   MOVIMIENTO · interacción
+   En desktop responde al mouse. En táctil no existe el hover, así que
+   lo mismo se dispara cuando la tarjeta cruza el centro de la pantalla.
+   Sólo se animan transform y opacity — nada que obligue al navegador
+   a recalcular el layout en cada cuadro.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.lift {
+  position: relative;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1),
+              box-shadow .45s cubic-bezier(.2,.8,.2,1),
+              border-color .40s ease;
 }
-@media (max-width: 768px) {
-  .radar-form { grid-template-columns: 1fr; }
-  .radar-result { grid-template-columns: 1fr; gap: 20px; }
-  .rd-dims { grid-template-columns: 1fr; }
-  .rd-score-card { padding: 20px; }
-  .rd-score-num { font-size: 3.2rem; }
+
+/* Halo que sigue al cursor. --mx / --my las escribe el JS. */
+.lift::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .40s ease;
+  background: radial-gradient(380px circle at var(--mx,50%) var(--my,50%),
+              rgba(255,255,255,.50), transparent 45%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 48px rgba(0,0,0,.13);
+    border-color: rgba(0,0,0,.14);
+  }
+  .lift:hover::after { opacity: 1; }
+}
+
+/* Equivalente táctil */
+.lift.is-near {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 38px rgba(0,0,0,.11);
+}
+.lift:active { transform: translateY(-1px) scale(.995); }
+
+/* Botones: barrido de luz al pasar, hundido al tocar */
+.btn { position: relative; overflow: hidden; }
+.btn::before {
+  content: ""; position: absolute; top: 0; left: -140%;
+  width: 55%; height: 100%; pointer-events: none;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.40), transparent);
+  transform: skewX(-18deg);
+}
+@keyframes crgSheen { to { left: 150%; } }
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover::before { animation: crgSheen .85s ease; }
+  .btn:hover { transform: translateY(-2px); }
+}
+.btn:active { transform: translateY(1px) scale(.985); }
+
+/* Logos de integraciones: del gris al color */
+.app-brand { transition: color .35s ease; }
+.app-brand img, .app-brand svg.app-icon {
+  transition: filter .40s ease, opacity .40s ease,
+              transform .40s cubic-bezier(.2,.8,.2,1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .app-brand:hover { color: var(--black); }
+  .app-brand:hover img, .app-brand:hover svg.app-icon {
+    filter: grayscale(0%) !important; opacity: 1 !important; transform: scale(1.18);
+  }
+}
+.app-brand:active img, .app-brand:active svg.app-icon,
+.app-brand.is-near img, .app-brand.is-near svg.app-icon {
+  filter: grayscale(0%) !important; opacity: 1 !important;
+}
+
+/* Pilares: el número de fase se desliza */
+.pillar-num { display: inline-block; transition: transform .45s cubic-bezier(.2,.8,.2,1), color .35s ease; }
+@media (hover: hover) and (pointer: fine) {
+  .pillar:hover .pillar-num { transform: translateX(7px); color: var(--black); }
+}
+.pillar.is-near .pillar-num { transform: translateX(5px); }
+
+/* ── Ventana: empresas con las que trabajamos ────────────────────── */
+.cl-overlay {
+  position: fixed; inset: 0; z-index: 999;
+  display: flex; align-items: center; justify-content: center; padding: 22px;
+  background: rgba(12,12,14,.58);
+  opacity: 0; pointer-events: none; transition: opacity .3s ease;
+}
+.cl-overlay.open { opacity: 1; pointer-events: auto; }
+.cl-modal {
+  background: var(--white); border-radius: 22px; padding: 44px 40px;
+  width: 100%; max-width: 680px; max-height: 86vh; overflow-y: auto;
+  box-shadow: 0 40px 90px rgba(0,0,0,.32);
+  transform: translateY(20px) scale(.97);
+  transition: transform .35s cubic-bezier(.2,.8,.2,1);
+  position: relative;
+}
+.cl-overlay.open .cl-modal { transform: none; }
+.cl-modal h2 { font-size: clamp(1.6rem, 3.4vw, 2.1rem); margin-bottom: 16px; }
+.cl-lead { color: var(--gray); font-size: 1rem; line-height: 1.6; margin-bottom: 26px; }
+.cl-close {
+  position: absolute; top: 18px; right: 18px;
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 1px solid var(--rule); background: var(--white);
+  font-size: 1.15rem; line-height: 1; color: var(--gray);
+  cursor: pointer; transition: background .2s ease, color .2s ease;
+}
+.cl-close:hover { background: var(--off-white); color: var(--black); }
+.cl-note {
+  border-left: 3px solid var(--gray-xlt); padding: 4px 0 4px 18px;
+  margin-bottom: 28px; color: var(--gray); font-size: .93rem; line-height: 1.65;
+}
+.cl-note b { color: var(--black); }
+.cl-sectors { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap: 12px; margin-bottom: 30px; }
+.cl-sector {
+  border: 1px solid var(--rule); border-radius: 14px; padding: 16px 18px;
+  font-size: .88rem; color: var(--gray); line-height: 1.5;
+}
+.cl-sector b { display: block; color: var(--black); font-size: .95rem; margin-bottom: 3px; }
+@media (max-width: 600px) { .cl-modal { padding: 34px 22px; } }
+@media (prefers-reduced-motion: reduce) {
+  .lift, .lift::after, .btn::before, .app-brand img, .app-brand svg.app-icon,
+  .pillar-num, .cl-overlay, .cl-modal {
+    transition: none !important; animation: none !important;
+  }
+  .lift:hover, .lift.is-near, .btn:hover { transform: none; }
 }
 </style>
 </head>
@@ -1063,9 +929,9 @@ footer a:hover { color: var(--black); }
 <nav id="nav" class="crystal-1">
   <a href="#" class="nav-logo">Cr<b>Gen</b></a>
   <ul class="nav-links">
-    <li><a href="#senales">Las señales</a></li>
     <li><a href="#pilares">Los 4 pilares</a></li>
     <li><a href="#metodo">Cómo trabajamos</a></li>
+    <li class="nav-keep"><a href="#clientes" id="clients-open">Clientes</a></li>
     <li><a href="#planes">Planes</a></li>
     <li><a href="https://wa.me/584122984632?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20CrGen" target="_blank" rel="noopener" class="nav-pill track-whatsapp">Escribir por WhatsApp →</a></li>
   </ul>
@@ -1074,8 +940,6 @@ footer a:hover { color: var(--black); }
 <!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
-    <span class="hero-badge crystal-2"><span class="badge-dot"></span>Architecture as a Service (AaaS)</span>
-
     <h1>
       Cada reporte manual le cuesta<br>
       <span class="muted">dinero que no ve.</span>
@@ -1090,7 +954,6 @@ footer a:hover { color: var(--black); }
 
 <!-- ECOSISTEMA UNIFICADO -->
 <section style="margin-top: 50px; margin-bottom: 50px; text-align: center;">
-  <p class="eyebrow" style="margin-bottom: 12px;">Ecosistemas Integrados</p>
   <p style="font-size: 1.05rem; color: var(--gray); max-width: 600px; margin: 0 auto 32px;">Extraemos y saneamos su lógica operativa sin importar en cuál de estas plataformas vive su data hoy.</p>
   <style>
     .app-brand {
@@ -1175,78 +1038,12 @@ footer a:hover { color: var(--black); }
   </div>
 </section>
 
-<!-- SEÑALES (problema) -->
-<section id="senales" class="section-wrap">
-  <div class="section-header">
-    <p class="eyebrow">Diagnóstico de Riesgo</p>
-    <h2>5 síntomas de que su operación<br>sufre de Deuda Digital.</h2>
-    <p class="lead">Las empresas gastan el 50% de sus presupuestos operativos parcheando problemas de fondo. Marque los síntomas que sufre su organización y descubra su nivel real de exposición.</p>
-  </div>
-
-  <div class="symptom-list" id="symptoms">
-    <div class="symptom" data-id="1">
-      <span class="sym-num">01</span>
-      <div class="sym-body">
-        <h4>El 30% del tiempo de gerencia se pierde buscando datos.</h4>
-        <p>Armar un reporte real toma días y múltiples emails cruzados. La operación se detiene para consolidar hojas de cálculo en las que de paso, nadie confía financieramente.</p>
-      </div>
-      <span class="sym-check"><span class="box"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.2L4 7.5L8.5 2" stroke="#1d1d1f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Me pasa</span>
-    </div>
-
-    <div class="symptom" data-id="2">
-      <span class="sym-num">02</span>
-      <div class="sym-body">
-        <h4>La empresa está "hipotecada" a empleados clave.</h4>
-        <p>Si la persona encargada de un área renuncia o se enferma, la organización se paraliza. El proceso vive en la cabeza del empleado, no en una infraestructura auditable.</p>
-      </div>
-      <span class="sym-check"><span class="box"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.2L4 7.5L8.5 2" stroke="#1d1d1f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Me pasa</span>
-    </div>
-
-    <div class="symptom" data-id="3">
-      <span class="sym-num">03</span>
-      <div class="sym-body">
-        <h4>Los proyectos de IA internos fracasan por alucinaciones.</h4>
-        <p>Su equipo intentó implementar un "ChatGPT corporativo", pero este responde datos falsos. Ocurre porque la herramienta está siendo alimentada con PDFs no estructurados y corruptos.</p>
-      </div>
-      <span class="sym-check"><span class="box"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.2L4 7.5L8.5 2" stroke="#1d1d1f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Me pasa</span>
-    </div>
-
-    <div class="symptom" data-id="4">
-      <span class="sym-num">04</span>
-      <div class="sym-body">
-        <h4>Las decisiones de la junta se toman por "feeling".</h4>
-        <p>Los precios, las mermas y las contrataciones se ejecutan sin respaldo estadístico en tiempo real. No existe un Data Warehouse ("Fuente de Verdad") intocable e inmutable.</p>
-      </div>
-      <span class="sym-check"><span class="box"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.2L4 7.5L8.5 2" stroke="#1d1d1f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Me pasa</span>
-    </div>
-
-    <div class="symptom" data-id="5">
-      <span class="sym-num">05</span>
-      <div class="sym-body">
-        <h4>Tienen pánico a enviar datos financieros a la Nube.</h4>
-        <p>Procesan contratos, nóminas e información médica a mano porque subir esa información a la API de Microsoft u OpenAI representa una violación masiva de Compliance.</p>
-      </div>
-      <span class="sym-check"><span class="box"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.2L4 7.5L8.5 2" stroke="#1d1d1f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Me pasa</span>
-    </div>
-  </div>
-
-  <!-- Live counter result -->
-  <div id="sym-result" style="margin-top: 28px; padding: 24px 28px; border-radius: 20px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; border: 1px solid var(--rule); background: #fff;">
-    <div>
-      <span class="mono" style="font-size: 0.66rem; color: var(--gray-lt); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; display:block; margin-bottom: 6px;">Su resultado en vivo</span>
-      <strong id="sym-count-label" style="font-size: 1.1rem; font-weight: 800; letter-spacing: -0.025em; color: var(--black);">Marque las señales que le suceden</strong>
-      <div id="sym-verdict" style="font-size: 0.88rem; color: var(--gray); margin-top: 4px;">Al marcar 3 o más, tiene sentido que hablemos.</div>
-    </div>
-    <a href="#" onclick="event.preventDefault(); openLeadModal('DIAGNÓSTICO PROFUNDO Nivel I ($400)');" class="btn btn-solid" id="sym-cta" style="opacity: 0.4; pointer-events: none;">Agendar diagnóstico →</a>
-  </div>
-</section>
 
 
 
 <!-- 4 PILLARS (solución) -->
 <section id="pilares" class="section-wrap">
   <div class="section-header">
-    <p class="eyebrow">La Arquitectura Organizacional</p>
     <h2>Conectamos sus sistemas.<br>Aceleramos sus decisiones.</h2>
     <p class="lead">Si su información vive dispersa entre ERPs y sistemas aislados, su empresa opera con "Deuda Digital". Nuestra arquitectura lee sus procesos y crea un flujo global para que lo que hoy toma semanas, fluya solo.</p>
   </div>
@@ -1297,7 +1094,6 @@ footer a:hover { color: var(--black); }
 <!-- VISUAL DATA · antes vs después -->
 <section class="section-wrap" style="padding-top: 0;">
   <div class="section-header">
-    <p class="eyebrow">Por qué importa ahora</p>
     <h2>Ver la ineficiencia<br>con sus propios ojos.</h2>
     <p class="lead">Lo que hoy pasa desapercibido y lo que pasa cuando la arquitectura está en su lugar. Misma empresa, mismo equipo.</p>
   </div>
@@ -1448,7 +1244,6 @@ footer a:hover { color: var(--black); }
 <!-- METODO (El Handoff) -->
 <section id="metodo" class="section-wrap">
   <div class="section-header">
-    <p class="eyebrow">El Entregable</p>
     <h2>Entornos de trabajo fluidos,<br>bajo su total gestión.</h2>
     <p class="lead">Nuestra participación deja resultados físicos. Culminamos el proceso entregándole la plataforma operativa optimizada para que su empresa viva sin fricciones orgánicas.</p>
   </div>
@@ -1477,181 +1272,11 @@ footer a:hover { color: var(--black); }
 
 
 
-<!-- CALCULADORA INTERACTIVA (Nivel 0 · App) -->
-<style>
-.calc-app { max-width: 1040px; margin: 0 auto; padding: 38px; border-radius: 24px; display: grid; grid-template-columns: 1.05fr 1fr; gap: 36px; align-items: stretch; }
-@media (max-width: 820px) { .calc-app { grid-template-columns: 1fr; padding: 28px 22px; gap: 28px; } }
-.calc-row { margin-bottom: 24px; }
-.calc-row:last-child { margin-bottom: 0; }
-.calc-row > label { font-size: 0.74rem; font-weight: 700; color: var(--gray); text-transform: uppercase; letter-spacing: 0.05em; display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
-.calc-row > label b { font-family: 'JetBrains Mono', ui-monospace, monospace; color: var(--black); font-size: 1.1rem; font-weight: 800; }
-.calc-row input[type=range] { width: 100%; -webkit-appearance: none; appearance: none; height: 4px; background: var(--rule); border-radius: 4px; outline: none; cursor: pointer; }
-.calc-row input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; background: var(--black); border-radius: 50%; cursor: pointer; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.18); }
-.calc-row input[type=range]::-moz-range-thumb { width: 20px; height: 20px; background: var(--black); border-radius: 50%; cursor: pointer; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.18); }
-.calc-segmented { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-.calc-segmented button { padding: 11px 6px; border-radius: 10px; border: 1px solid var(--rule); background: white; font-family: inherit; font-size: 0.76rem; font-weight: 700; color: var(--gray); cursor: pointer; transition: all 0.18s; }
-.calc-segmented button.active { background: var(--black); color: white; border-color: var(--black); }
-.calc-output { background: linear-gradient(160deg, #0c0c0c 0%, #1f1f1f 100%); color: white; border-radius: 18px; padding: 30px 28px; display: flex; flex-direction: column; justify-content: center; min-height: 320px; }
-.calc-eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; opacity: 0.55; text-transform: uppercase; margin-bottom: 10px; }
-.calc-big { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 2.7rem; font-weight: 800; line-height: 1.05; margin-bottom: 22px; letter-spacing: -0.01em; }
-.calc-big.glow { animation: calcGlow 0.5s ease; }
-@keyframes calcGlow { 0%{transform:scale(1);} 50%{transform:scale(1.04); color:#34C759;} 100%{transform:scale(1);} }
-.calc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); }
-.calc-grid > div { display: flex; flex-direction: column; gap: 2px; }
-.calc-grid span { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 1.18rem; font-weight: 700; }
-.calc-grid small { font-size: 0.68rem; opacity: 0.55; line-height: 1.3; }
-.calc-cta { display:inline-flex; align-items:center; justify-content:center; width:100%; margin-top:20px; padding:14px 18px; background:white; color:var(--black); border:0; border-radius:12px; font-family:inherit; font-weight:800; font-size:0.95rem; cursor:pointer; transition:transform 0.15s; }
-.calc-cta:hover { transform: translateY(-1px); }
-.calc-disclaimer { font-size:0.68rem; opacity:0.45; margin-top:12px; line-height:1.4; }
-</style>
-<section id="calc" class="section-wrap">
-  <div class="section-header">
-    <p class="eyebrow">Pruebe gratis · sin registro · sin instalar nada</p>
-    <h2>Calcule lo que su<br>desorden está pagando.</h2>
-    <p class="lead">Mueva los controles. En vivo verá el costo mensual real que su operación absorbe en nómina improductiva mientras lee esta página.</p>
-  </div>
 
-  <div class="calc-app crystal-2">
-    <div class="calc-inputs">
-      <div class="calc-row">
-        <label>Empleados que arman reportes manuales <b id="cv-emp">5</b></label>
-        <input type="range" id="ci-emp" min="1" max="200" value="5" aria-label="Empleados">
-      </div>
-      <div class="calc-row">
-        <label>Horas/semana perdidas consolidando <b id="cv-hrs">8</b></label>
-        <input type="range" id="ci-hrs" min="1" max="40" value="8" aria-label="Horas semanales">
-      </div>
-      <div class="calc-row">
-        <label>Salario promedio mensual (USD)</label>
-        <div class="calc-segmented" id="ci-sal">
-          <button data-sal="400" type="button" class="active">&lt; $500</button>
-          <button data-sal="1000" type="button">$500–$1.500</button>
-          <button data-sal="2200" type="button">&gt; $1.500</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="calc-output">
-      <p class="calc-eyebrow">Costo operativo absorbido / mes</p>
-      <div class="calc-big" id="cv-cost">$0</div>
-      <div class="calc-grid">
-        <div><span id="cv-hrsmonth">0</span><small>horas/mes</small></div>
-        <div><span id="cv-pct">0%</span><small>tiempo equipo</small></div>
-        <div><span id="cv-roi">—</span><small>meses ROI Nivel II</small></div>
-        <div><span id="cv-annual">$0</span><small>costo anual proyectado</small></div>
-        <div><span id="cv-fte">0</span><small>FTE bloqueados</small></div>
-        <div><span id="cv-days">0</span><small>días/mes en reportes</small></div>
-      </div>
-      <button onclick="openLeadModal('CALCULADORA · Diagnóstico Gratis')" class="calc-cta" type="button">Quiero recuperar ese dinero →</button>
-      <p class="calc-disclaimer">Estimación referencial. El diagnóstico real cuantifica además flujos cruzados, duplicidades y riesgos no visibles en hoja de cálculo.</p>
-    </div>
-  </div>
-</section>
-
-<!-- RADAR OPERATIVO · Nivel 0 ampliado -->
-<section id="radar" class="section-wrap">
-  <div class="section-header">
-    <p class="eyebrow">Radar Operativo CrGen · Gratis · Sin registro · Sin instalar nada</p>
-    <h2>Su empresa expuesta sin saberlo.<br>Lo vemos en 30 segundos.</h2>
-    <p class="lead">Escriba el dominio de su empresa (ej: <i>suempresa.com</i>) y le devolvemos en vivo su <b>Score de Madurez Digital</b> sobre 100 — con 3 problemas concretos que ya están costándole dinero o exponiendo su negocio. Todo desde su navegador, sin enviarnos nada privado.</p>
-  </div>
-
-  <div class="radar-app crystal-2">
-    <!-- Stage 1: form -->
-    <div class="radar-form" id="radar-form">
-      <div>
-        <label for="rd-domain">Dominio de su empresa</label>
-        <input type="text" id="rd-domain" placeholder="suempresa.com" autocomplete="off" inputmode="url" maxlength="80" />
-      </div>
-      <div>
-        <label for="rd-sector">Sector</label>
-        <select id="rd-sector">
-          <option value="">Seleccione...</option>
-          <option value="retail">Retail / Comercio</option>
-          <option value="manufactura">Manufactura / Industrial</option>
-          <option value="servicios">Servicios profesionales</option>
-          <option value="salud">Salud</option>
-          <option value="logistica">Logística / Distribución</option>
-          <option value="finanzas">Finanzas / Contabilidad</option>
-          <option value="construccion">Construcción</option>
-          <option value="educacion">Educación</option>
-          <option value="otro">Otro</option>
-        </select>
-      </div>
-      <div>
-        <label for="rd-size">Tamaño</label>
-        <select id="rd-size">
-          <option value="">Seleccione...</option>
-          <option value="1-10">1 a 10 empleados</option>
-          <option value="11-50">11 a 50 empleados</option>
-          <option value="51-200">51 a 200 empleados</option>
-          <option value="+200">Más de 200</option>
-        </select>
-      </div>
-      <button id="rd-go" type="button">Iniciar Radar →</button>
-    </div>
-
-    <p class="radar-disclaimer">Análisis basado en señales 100% públicas. No accedemos a sus sistemas internos. El resultado vive sólo en su navegador.</p>
-
-    <!-- Qué analiza el Radar — explicación clara, sin tecnicismos -->
-    <div class="radar-explain">
-      <h5>Qué revisamos en su empresa</h5>
-      <div class="rx-item">
-        <span class="rx-icon">🌐</span>
-        <span class="rx-text"><b>Su web y dominio</b>Si la página carga rápido, si Google la entiende y si los clientes la encuentran cuando buscan.</span>
-      </div>
-      <div class="rx-item">
-        <span class="rx-icon">📱</span>
-        <span class="rx-text"><b>Velocidad real en el celular</b>Medimos qué siente su cliente cuando entra desde un teléfono con datos móviles, no desde un equipo de oficina.</span>
-      </div>
-      <div class="rx-item">
-        <span class="rx-icon">📧</span>
-        <span class="rx-text"><b>Su correo corporativo</b>Verificamos si alguien puede mandar correos haciéndose pasar por su empresa (suplantación) — pasa más de lo que cree.</span>
-      </div>
-      <div class="rx-item">
-        <span class="rx-icon">🔒</span>
-        <span class="rx-text"><b>Compliance y exposición</b>Detectamos brechas de cumplimiento públicas que abren la puerta a multas, fraude o pérdida de confianza.</span>
-      </div>
-      <div class="rx-item">
-        <span class="rx-icon">🧭</span>
-        <span class="rx-text"><b>Conectividad y presencia</b>Cómo está conectada su marca entre dominio, redes sociales y canales de atención al cliente.</span>
-      </div>
-    </div>
-
-    <!-- Stage 2: scanning -->
-    <div class="radar-scan" id="radar-scan" hidden>
-      <div class="scan-bar"><span id="scan-bar-fill"></span></div>
-      <div class="scan-line" data-step="dns"><span class="dot"></span><span>Resolviendo infraestructura DNS…</span></div>
-      <div class="scan-line" data-step="web"><span class="dot"></span><span>Auditando arquitectura web (mobile + desktop)…</span></div>
-      <div class="scan-line" data-step="email"><span class="dot"></span><span>Verificando huella SPF / DMARC / MX…</span></div>
-      <div class="scan-line" data-step="visibility"><span class="dot"></span><span>Detectando hallazgos por sector…</span></div>
-      <div class="scan-line" data-step="score"><span class="dot"></span><span>Calculando Madurez Operativa Digital…</span></div>
-    </div>
-
-    <!-- Stage 3: results -->
-    <div class="radar-result" id="radar-result" hidden>
-      <div class="rd-score-card">
-        <div class="rd-score-num"><span id="rd-score-val">0</span><small>/100</small></div>
-        <div class="rd-score-label">Madurez Operativa Digital</div>
-        <span class="rd-score-tag" id="rd-score-tag">—</span>
-      </div>
-      <div class="rd-dims" id="rd-dims"></div>
-      <div class="rd-findings">
-        <h4>3 hallazgos visibles · <b id="rd-hidden">9</b> bloqueados</h4>
-        <ul id="rd-findings-list"></ul>
-        <div class="rd-locked">Hallazgos restantes (incluye fugas de procesos, dependencia de empleados clave, riesgos de compliance) sólo se entregan en el <b>Diagnóstico Profundo Nivel I — $400 USD</b>.</div>
-      </div>
-      <button id="rd-cta" type="button">Desbloquear los hallazgos restantes — Solicitar Nivel I →</button>
-    </div>
-
-    <div class="rd-error" id="rd-error" hidden></div>
-  </div>
-</section>
 
 <!-- POR QUÉ CRGEN · Diferenciación competitiva -->
 <section id="porquenos" class="section-wrap" style="padding-bottom: 40px; content-visibility: auto;">
   <div class="section-header">
-    <p class="eyebrow">La pregunta obvia</p>
     <h2>¿Por qué no simplemente<br>usar Zapier o una gran consultora?</h2>
     <p class="lead">Las herramientas automatizan tareas. Las grandes consultoras cobran entrada de $20.000 USD. CrGen arquitectura flujos para PYMEs LATAM desde $400 — sin reemplazar lo que ya usa.</p>
   </div>
@@ -1704,7 +1329,6 @@ footer a:hover { color: var(--black); }
 <!-- PLANES -->
 <section id="planes" class="section-wrap">
   <div class="section-header">
-    <p class="eyebrow">Formas de trabajar</p>
     <h2>Conectamos su estructura.<br>Aceleramos su capital.</h2>
     <p class="lead">Las mejores arquitecturas se implementan sin ataduras. Sin suscripciones ocultas, sin licencias forzadas, sin compromiso ciego. Si no prevemos un ahorro radical, no le vendemos tecnología.</p>
   </div>
@@ -1724,13 +1348,13 @@ footer a:hover { color: var(--black); }
         </div>
       </div>
       <ul class="plan-list" style="flex-grow: 1;">
-        <li><b>Calculadora interactiva</b> de costo del desorden</li>
-        <li><b>Radar Operativo CrGen</b> · Score 0–100 + 3 hallazgos</li>
-        <li>Auditoría pública de exposición digital</li>
-        <li>Identificación preliminar de bloqueos de flujo</li>
+        <li><b>Llamada de 20 minutos</b> con un arquitecto, sin costo</li>
+        <li>Revisamos qué sistemas usa hoy y dónde se rompe el flujo</li>
+        <li>Identificación preliminar de trabajo duplicado</li>
+        <li>Le decimos si conviene avanzar. Si no conviene, también.</li>
       </ul>
-      <div class="plan-hours" style="margin: 16px 0 12px;"><span class="mono">Resultado en 30 segundos</span></div>
-      <button onclick="document.getElementById('radar').scrollIntoView({behavior:'smooth', block:'start'});" class="btn btn-ghost plan-cta" style="width: 100%; justify-content: center;">Activar Radar gratis ↑</button>
+      <div class="plan-hours" style="margin: 16px 0 12px;"><span class="mono">Agenda en el día</span></div>
+      <button onclick="openLeadModal('NIVEL 0 · Llamada de diagnóstico gratis')" class="btn btn-ghost plan-cta" style="width: 100%; justify-content: center;">Agendar llamada gratis →</button>
     </div>
 
     <!-- FICHA 2: NIVEL I -->
@@ -1758,7 +1382,7 @@ footer a:hover { color: var(--black); }
 
     <!-- FICHA 3: NIVEL II -->
     <div class="plan plan-featured crystal-3" style="display:flex; flex-direction:column; height: 100%;">
-      <span class="plan-badge">AaaS Premium</span>
+      <span class="plan-badge">Enterprise</span>
       <span class="plan-tag" style="font-size: 0.95rem; font-weight: 800; color: var(--black); line-height: 1.3;">NIVEL II · ARQUITECTURA ATLAS DOCUMENTAL</span>
       <div style="margin: 20px 0;">
         <div class="plan-price timer-price" style="margin-top: 12px;">
@@ -1813,7 +1437,6 @@ footer a:hover { color: var(--black); }
 <!-- LEAD MAGNET -->
 <section id="lead">
   <div class="cta-panel crystal-3">
-    <p class="eyebrow">Tome el Control</p>
     <h2>Descubra dónde está perdiendo<br>dinero operativo hoy.</h2>
     <p class="lead" style="max-width: 680px;">Someteremos la actualidad de su negocio a una Auditoría de Procesos. Es una instancia constructiva diseñada para encontrar las brechas o "fugas" de su engranaje donde recuperar tiempo será sumamente rentable.</p>
 
@@ -1828,7 +1451,6 @@ footer a:hover { color: var(--black); }
   <div class="crystal-2" style="background:#fff; border-radius:24px; max-width:540px; width:100%; max-height:90vh; overflow-y:auto; padding:32px 40px; position:relative; box-shadow:0 24px 60px rgba(0,0,0,0.2);">
     <button onclick="closeLeadModal()" style="position:absolute; top:20px; right:24px; font-size:1.8rem; background:none; border:none; cursor:pointer; color:var(--gray);">×</button>
     <div style="margin-bottom:24px; text-align:center;">
-      <p class="eyebrow" id="lead-plan-name" style="margin-bottom:8px;">DIAGNÓSTICO GRATUITO</p>
       <h3 style="font-size:1.6rem; font-weight:800; line-height:1.1;">Solicite su Arquitectura</h3>
       <p style="font-size:0.9rem; color:var(--gray); margin-top:8px;">Complete los datos básicos para procesar su diagnóstico o reservar su sesión. Esto nos da contexto inicial.</p>
     </div>
@@ -1875,13 +1497,8 @@ footer a:hover { color: var(--black); }
 
 
 <footer>
-  <span>© 2026 CrGen · Architecture as a Service</span>
+  <span>© 2026 CrGen</span>
   <div class="footer-links">
-    <div class="visit-counter" aria-live="polite" title="Visitas registradas al sitio">
-      <span class="vc-dot" aria-hidden="true"></span>
-      <span>Visitas</span>
-      <span class="vc-num" id="visit-count">—</span>
-    </div>
     <a href="https://www.instagram.com/crgenve" target="_blank" rel="noopener">@crgenve</a>
     <a href="https://wa.me/584122984632?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20CrGen" target="_blank" rel="noopener" class="track-whatsapp">WhatsApp</a>
   </div>
@@ -1894,11 +1511,11 @@ footer a:hover { color: var(--black); }
 </div>
 
 <!-- GSAP CDN con SRI + crossorigin (previene CDN compromise) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"
+        integrity="sha512-oJ8QbaQThQoJZ7oEv+29jfPM6CcP+zUxh3PKJs1vyOhx0UraUrE7PQgeItu3dOuCJyrzWpoYMsVjkkPEBzbUqw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
-        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"
+        integrity="sha512-OaIE7ud4P04EhnBuhEcm0wQSceIxbi2pV03oBLS/+F6ampfxsnxcIxOp7H2eF9G7N0kEht0VAzOLG+dTLSo17Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 
 <script>
@@ -2189,71 +1806,7 @@ window.addEventListener('load', function(){
   });
 });
 
-// Calculadora Deuda Digital
-(function(){
-  var emp = document.getElementById('ci-emp');
-  var hrs = document.getElementById('ci-hrs');
-  var seg = document.getElementById('ci-sal');
-  if (!emp || !hrs || !seg) return;
-  var sal = 400;
-  var costEl = document.getElementById('cv-cost');
-  var lastCost = 0;
-  function tweenCost(target){
-    if (window.gsap) {
-      var obj = { v: lastCost };
-      gsap.to(obj, { v: target, duration: 0.55, ease: 'power2.out', onUpdate: function(){ costEl.textContent = '$' + Math.round(obj.v).toLocaleString('es'); } });
-    } else {
-      costEl.textContent = '$' + Math.round(target).toLocaleString('es');
-    }
-    lastCost = target;
-  }
-  seg.querySelectorAll('button').forEach(function(b){
-    b.addEventListener('click', function(){
-      seg.querySelectorAll('button').forEach(function(x){ x.classList.remove('active'); });
-      b.classList.add('active');
-      sal = parseInt(b.getAttribute('data-sal'), 10);
-      update();
-    });
-  });
-  function update(){
-    var e = parseInt(emp.value, 10);
-    var h = parseInt(hrs.value, 10);
-    document.getElementById('cv-emp').textContent = e;
-    document.getElementById('cv-hrs').textContent = h;
-    var hourRate = sal / 160;
-    var hoursMonth = e * h * 4.33;
-    var costMonth = hoursMonth * hourRate;
-    var pct = Math.min(Math.round((h / 40) * 100), 100);
-    var roi = costMonth > 0 ? Math.max(1, Math.round(1500 / costMonth)) : 0;
-    tweenCost(costMonth);
-    document.getElementById('cv-hrsmonth').textContent = Math.round(hoursMonth).toLocaleString('es');
-    document.getElementById('cv-pct').textContent = pct + '%';
-    document.getElementById('cv-roi').textContent = roi >= 12 ? '12+' : roi;
-    document.getElementById('cv-annual').textContent = '$' + Math.round(costMonth * 12).toLocaleString('es');
-    document.getElementById('cv-fte').textContent = (hoursMonth / 160).toFixed(1);
-    document.getElementById('cv-days').textContent = Math.round(hoursMonth / 8).toLocaleString('es');
-    costEl.classList.remove('glow'); void costEl.offsetWidth; costEl.classList.add('glow');
-  }
-  emp.addEventListener('input', update);
-  hrs.addEventListener('input', update);
-  update();
-})();
 
-// Visit counter (counterapi.dev — public, free, no auth)
-(function(){
-  var el = document.getElementById('visit-count'); if (!el) return;
-  var sessKey = 'crgen_visit_session_v1';
-  var base = 'https://api.counterapi.dev/v1/crgen/site-visits';
-  var url = sessionStorage.getItem(sessKey) ? base + '/' : base + '/up';
-  fetch(url, { cache: 'no-store' })
-    .then(function(r){ return r.json(); })
-    .then(function(d){
-      var n = (d && (d.count != null ? d.count : (d.data && (d.data.up_count != null ? d.data.up_count : d.data.count)))) || 0;
-      el.textContent = Number(n).toLocaleString('es');
-      sessionStorage.setItem(sessKey, '1');
-    })
-    .catch(function(){ el.textContent = '—'; });
-})();
 
 // Oferta Timer (48 horas persistente)
 const DURATION = 48 * 60 * 60 * 1000;
@@ -2307,335 +1860,6 @@ if(priceSection) {
   ioPrice.observe(priceSection);
 }
 
-/* ===========================================================
-   RADAR OPERATIVO CrGen — Nivel 0 ampliado
-   100% client-side. APIs públicas: PageSpeed Insights + Cloudflare DoH.
-   No expone datos del usuario. No accede a sistemas internos.
-   © CrGen — Architecture as a Service. Reproducción no autorizada queda
-   trazada vía referrer logs y branding inline.
-   =========================================================== */
-(function(){
-  // Domain guard — bloquea ejecución fuera de crgen.online y dev local.
-  // Friction contra copy-and-deploy casual (no es seguridad criptográfica).
-  var _h = (location.hostname || '').toLowerCase();
-  var _allowed = !_h /* file:// local */
-    || _h === 'crgen.online' || _h === 'www.crgen.online' || _h === 'chrisbracco.github.io'
-    || _h === 'localhost' || /^127\./.test(_h) || /^192\.168\./.test(_h);
-  if (!_allowed) { console.warn('[CrGen Radar] Inactivo fuera del dominio oficial.'); return; }
-  var RD = {
-    domainEl: document.getElementById('rd-domain'),
-    sectorEl: document.getElementById('rd-sector'),
-    sizeEl: document.getElementById('rd-size'),
-    goBtn: document.getElementById('rd-go'),
-    formBox: document.getElementById('radar-form'),
-    scanBox: document.getElementById('radar-scan'),
-    resultBox: document.getElementById('radar-result'),
-    errorBox: document.getElementById('rd-error'),
-    barFill: document.getElementById('scan-bar-fill'),
-    scoreVal: document.getElementById('rd-score-val'),
-    scoreTag: document.getElementById('rd-score-tag'),
-    dimsBox: document.getElementById('rd-dims'),
-    findingsList: document.getElementById('rd-findings-list'),
-    cta: document.getElementById('rd-cta'),
-    state: { domain: '', sector: '', size: '', score: 0, dims: {}, findings: [] }
-  };
-  if (!RD.goBtn) return;
-
-  // --- Sanitización de input. Bloquea localhost/IPs privadas/protocolos raros.
-  function sanitizeDomain(raw) {
-    if (!raw) return null;
-    var s = String(raw).trim().toLowerCase();
-    s = s.replace(/^https?:\/\//, '').replace(/^www\./, '');
-    s = s.split('/')[0].split('?')[0].split('#')[0];
-    // formato dominio: letras, números, guiones, puntos. mínimo TLD 2 chars.
-    if (!/^[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)+$/.test(s)) return null;
-    if (s.length < 4 || s.length > 80) return null;
-    // bloquea privados/locales
-    if (/^(localhost|127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[0-1])\.|::1|0\.0\.0\.0)/.test(s)) return null;
-    return s;
-  }
-
-  function showError(msg) {
-    RD.errorBox.textContent = msg;
-    RD.errorBox.hidden = false;
-    setTimeout(function(){ RD.errorBox.hidden = true; }, 6000);
-  }
-
-  // --- Cooldown ligero para no abusar APIs públicas (cosmético).
-  function cooldownOk(domain) {
-    try {
-      var key = 'crgen_radar_' + domain;
-      var last = localStorage.getItem(key);
-      if (last && (Date.now() - parseInt(last, 10)) < 1000 * 60 * 30) return false; // 30 min
-      localStorage.setItem(key, String(Date.now()));
-      return true;
-    } catch(e) { return true; }
-  }
-
-  // --- DNS over HTTPS (Cloudflare). Devuelve array de answers o [] si falla.
-  function dohQuery(domain, type) {
-    var url = 'https://cloudflare-dns.com/dns-query?name=' + encodeURIComponent(domain) + '&type=' + encodeURIComponent(type);
-    return fetch(url, { headers: { 'accept': 'application/dns-json' } })
-      .then(function(r){ return r.ok ? r.json() : null; })
-      .then(function(j){ return (j && j.Answer) ? j.Answer : []; })
-      .catch(function(){ return []; });
-  }
-
-  // --- PageSpeed Insights v5.
-  // Para evitar rate-limit (429), generar API key gratis en
-  // https://console.cloud.google.com → habilitar "PageSpeed Insights API" →
-  // restringir por HTTP referrer a "*.crgen.online/*" → pegar abajo.
-  var PSI_API_KEY = ''; // ← pegar key restringida por referrer aquí
-  function psiQuery(domain) {
-    var url = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed'
-            + '?url=' + encodeURIComponent('https://' + domain)
-            + '&strategy=mobile&category=performance&category=seo&category=best-practices';
-    if (PSI_API_KEY) url += '&key=' + encodeURIComponent(PSI_API_KEY);
-    var ctrl = (typeof AbortController === 'function') ? new AbortController() : null;
-    var timeoutId = setTimeout(function(){ if (ctrl) ctrl.abort(); }, 12000);
-    var fetchOpts = ctrl ? { signal: ctrl.signal } : {};
-    return fetch(url, fetchOpts)
-      .then(function(r){
-        clearTimeout(timeoutId);
-        if (r.status === 429) return { _rateLimited: true };
-        return r.ok ? r.json() : null;
-      })
-      .catch(function(){ clearTimeout(timeoutId); return { _timeout: true }; });
-  }
-
-  // --- Heurística de visibilidad sectorial (cero scrape — solo dominio + sector).
-  function sectorHeuristics(domain, sector) {
-    var hints = [];
-    var tld = domain.split('.').slice(-1)[0];
-    if (tld === 've' || tld === 'co' || tld === 'pe') hints.push('TLD nacional detectado');
-    if (sector === 'finanzas' || sector === 'salud') hints.push('Sector con compliance crítico');
-    return hints;
-  }
-
-  // --- Animación de barra de progreso + step lines.
-  function setStep(stepId, status) {
-    var el = RD.scanBox.querySelector('.scan-line[data-step="' + stepId + '"]');
-    if (!el) return;
-    el.classList.remove('active', 'done');
-    if (status) el.classList.add(status);
-  }
-  function setBar(pct) { RD.barFill.style.width = Math.max(0, Math.min(100, pct)) + '%'; }
-
-  // --- Cálculo de score por dimensión (0-100).
-  function computeDimensions(psi, dns) {
-    var dims = { visibilidad: 50, performance: 50, infraestructura: 50, compliance: 50, conectividad: 50 };
-    var findings = [];
-
-    // Performance ← PSI mobile score
-    if (psi && psi.lighthouseResult && psi.lighthouseResult.categories && psi.lighthouseResult.categories.performance) {
-      var p = Math.round((psi.lighthouseResult.categories.performance.score || 0) * 100);
-      dims.performance = p;
-      if (p < 40) findings.push({ pri: 1, text: 'Sitio carga lento en móvil 4G (score ' + p + '/100). Cada segundo extra = 7% de leads perdidos.' });
-      else if (p < 70) findings.push({ pri: 2, text: 'Performance móvil bajo el rango aceptable (' + p + '/100). Cuello de botella en assets pesados.' });
-    } else {
-      findings.push({ pri: 3, text: 'Performance móvil no medible públicamente — primer indicador de infraestructura opaca.' });
-    }
-
-    // Visibilidad / SEO ← PSI seo + audits clave
-    if (psi && psi.lighthouseResult) {
-      var lr = psi.lighthouseResult;
-      var seoScore = (lr.categories.seo && Math.round(lr.categories.seo.score * 100)) || 50;
-      var bp = (lr.categories['best-practices'] && Math.round(lr.categories['best-practices'].score * 100)) || 50;
-      dims.visibilidad = seoScore;
-      dims.infraestructura = bp;
-      var audits = lr.audits || {};
-      if (audits['meta-description'] && audits['meta-description'].score === 0)
-        findings.push({ pri: 2, text: 'Sin meta-description: Google reduce la visibilidad orgánica de la empresa.' });
-      if (audits['is-on-https'] && audits['is-on-https'].score === 0)
-        findings.push({ pri: 1, text: 'Sitio sin HTTPS válido. Riesgo crítico de exposición y caída de ranking.' });
-      if (audits['viewport'] && audits['viewport'].score === 0)
-        findings.push({ pri: 2, text: 'Sin viewport móvil declarado. Pérdida masiva de engagement en celular.' });
-      if (audits['document-title'] && audits['document-title'].score === 0)
-        findings.push({ pri: 3, text: 'Página principal sin título estructurado. Pérdida directa de SEO.' });
-    }
-
-    // Compliance email ← SPF/DMARC
-    var hasSPF = (dns.txt || []).some(function(r){ return /v=spf1/i.test(r.data || ''); });
-    var hasDMARC = (dns.dmarc || []).some(function(r){ return /v=DMARC1/i.test(r.data || ''); });
-    var compScore = 30 + (hasSPF ? 30 : 0) + (hasDMARC ? 40 : 0);
-    dims.compliance = compScore;
-    if (!hasSPF) findings.push({ pri: 1, text: 'Sin registro SPF: cualquiera puede enviar correos suplantando su dominio corporativo.' });
-    if (!hasDMARC) findings.push({ pri: 1, text: 'Sin política DMARC: emails de la empresa son falsificables sin alerta.' });
-
-    // Conectividad ← MX presence
-    var hasMX = (dns.mx || []).length > 0;
-    dims.conectividad = hasMX ? 80 : 30;
-    if (!hasMX) findings.push({ pri: 2, text: 'Sin servidor de correo (MX) en su dominio principal — depende de servicios externos no auditables.' });
-
-    return { dims: dims, findings: findings };
-  }
-
-  function aggregateScore(dims) {
-    var keys = Object.keys(dims);
-    var sum = keys.reduce(function(a, k){ return a + dims[k]; }, 0);
-    return Math.round(sum / keys.length);
-  }
-
-  // --- Animación count-up del score (GSAP si está, fallback simple).
-  function countUp(el, to, duration) {
-    if (window.gsap) {
-      var o = { v: 0 };
-      gsap.to(o, { v: to, duration: duration || 1.5, ease: 'power2.out',
-        onUpdate: function(){ el.textContent = Math.round(o.v); } });
-    } else {
-      el.textContent = to;
-    }
-  }
-
-  // --- Renderizar resultado.
-  function renderResult(data) {
-    RD.scanBox.hidden = true;
-    RD.resultBox.hidden = false;
-    if (window.gsap) gsap.from(RD.resultBox, { opacity: 0, y: 20, duration: 0.6, ease: 'power2.out' });
-
-    countUp(RD.scoreVal, data.score, 1.4);
-    var tag = RD.scoreTag;
-    tag.classList.remove('bad','mid','good');
-    if (data.score < 50) { tag.textContent = 'Riesgo Alto'; tag.classList.add('bad'); }
-    else if (data.score < 75) { tag.textContent = 'Mejorable'; tag.classList.add('mid'); }
-    else { tag.textContent = 'Sólido'; tag.classList.add('good'); }
-
-    var labels = {
-      visibilidad: 'Visibilidad',
-      performance: 'Performance',
-      infraestructura: 'Infraestructura',
-      compliance: 'Compliance',
-      conectividad: 'Conectividad'
-    };
-    RD.dimsBox.innerHTML = '';
-    Object.keys(data.dims).forEach(function(k){
-      var v = Math.round(data.dims[k]);
-      var dim = document.createElement('div');
-      dim.className = 'rd-dim';
-      var name = document.createElement('div');
-      name.className = 'rd-dim-name';
-      var s = document.createElement('span'); s.textContent = labels[k] || k;
-      var b = document.createElement('b'); b.textContent = v + '/100';
-      name.appendChild(s); name.appendChild(b);
-      var bar = document.createElement('div'); bar.className = 'rd-dim-bar';
-      var fill = document.createElement('span');
-      bar.appendChild(fill);
-      dim.appendChild(name); dim.appendChild(bar);
-      RD.dimsBox.appendChild(dim);
-      requestAnimationFrame(function(){ fill.style.width = v + '%'; });
-    });
-
-    // Top 3 hallazgos por prioridad
-    data.findings.sort(function(a, b){ return a.pri - b.pri; });
-    var top = data.findings.slice(0, 3);
-    if (top.length === 0) {
-      top = [{ text: 'Su dominio expone fingerprint mínimo — el verdadero riesgo está en sus procesos internos, no en lo público.' }];
-    }
-    RD.findingsList.innerHTML = '';
-    top.forEach(function(f){
-      var li = document.createElement('li');
-      li.textContent = f.text;
-      RD.findingsList.appendChild(li);
-    });
-  }
-
-  // --- Lanzar el escaneo (orquesta los stages).
-  function runRadar() {
-    var domainRaw = RD.domainEl.value;
-    var sector = RD.sectorEl.value;
-    var size = RD.sizeEl.value;
-    var domain = sanitizeDomain(domainRaw);
-    if (!domain) return showError('Ingrese un dominio válido (ej: suempresa.com).');
-    if (!sector) return showError('Seleccione su sector.');
-    if (!size) return showError('Seleccione el tamaño de su empresa.');
-    if (!cooldownOk(domain)) return showError('Ya analizamos este dominio recientemente. Reintente en 30 minutos.');
-
-    RD.state.domain = domain;
-    RD.state.sector = sector;
-    RD.state.size = size;
-    RD.errorBox.hidden = true;
-    RD.formBox.style.display = 'none';
-    RD.scanBox.hidden = false;
-    RD.goBtn.disabled = true;
-    setBar(8);
-
-    // Tracking
-    if (typeof fbq === 'function') fbq('track', 'InitiateCheckout', { content_name: 'Radar', content_category: sector });
-    if (typeof gtag === 'function') gtag('event', 'radar_start', { sector: sector, size: size });
-
-    setStep('dns', 'active'); setBar(15);
-
-    var dnsP = Promise.all([
-      dohQuery(domain, 'TXT'),
-      dohQuery('_dmarc.' + domain, 'TXT'),
-      dohQuery(domain, 'MX')
-    ]).then(function(results){
-      setStep('dns', 'done'); setBar(35);
-      return { txt: results[0], dmarc: results[1], mx: results[2] };
-    });
-
-    // Anim de steps progresiva (independiente de promesa) — sensación de avance constante.
-    var animTimers = [];
-    animTimers.push(setTimeout(function(){ setStep('web', 'active'); setBar(45); }, 700));
-    animTimers.push(setTimeout(function(){ setStep('web', 'done'); setStep('email', 'active'); setBar(60); }, 3500));
-    animTimers.push(setTimeout(function(){ setStep('email', 'done'); setStep('visibility', 'active'); setBar(75); }, 6500));
-    animTimers.push(setTimeout(function(){ setStep('visibility', 'done'); setStep('score', 'active'); setBar(88); }, 9500));
-
-    var psiP = psiQuery(domain).then(function(p){
-      if (p && p._rateLimited) RD.state.psiRateLimited = true;
-      if (p && p._timeout) RD.state.psiTimeout = true;
-      return (p && (p._rateLimited || p._timeout)) ? null : p;
-    });
-
-    Promise.all([dnsP, psiP]).then(function(arr){
-      animTimers.forEach(function(t){ clearTimeout(t); });
-      var dns = arr[0], psi = arr[1];
-      setStep('web', 'done'); setStep('email', 'done'); setStep('visibility', 'done');
-      setBar(95);
-      var calc = computeDimensions(psi, dns);
-      RD.state.dims = calc.dims;
-      RD.state.findings = calc.findings;
-      RD.state.score = aggregateScore(calc.dims);
-      RD.state.totalFindings = calc.findings.length + 9; // +9 hallazgos bloqueados (Nivel I)
-      document.getElementById('rd-hidden').textContent = Math.max(9, RD.state.totalFindings - 3);
-      setStep('score', 'done'); setBar(100);
-
-      if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'Radar', value: RD.state.score });
-      if (typeof gtag === 'function') gtag('event', 'radar_complete', { score: RD.state.score });
-
-      setTimeout(function(){
-        renderResult(RD.state);
-        if (RD.state.psiRateLimited) {
-          showError('Auditoría de velocidad móvil temporalmente saturada (rate-limit Google). Resto del análisis completado. Reintente en unos minutos para score completo.');
-        } else if (RD.state.psiTimeout) {
-          showError('Auditoría de velocidad móvil tardó más de lo normal y se omitió. Resto del análisis completado correctamente.');
-        }
-      }, 400);
-    }).catch(function(){
-      animTimers.forEach(function(t){ clearTimeout(t); });
-      showError('No pudimos completar el análisis. Reintente en un momento o escríbanos por WhatsApp y lo revisamos manualmente.');
-      RD.scanBox.hidden = true;
-      RD.formBox.style.display = '';
-      RD.goBtn.disabled = false;
-    });
-  }
-
-  // --- CTA: abre lead modal con prefill (no enviamos datos a servidor — todo va por WhatsApp).
-  RD.cta.addEventListener('click', function(){
-    var s = RD.state;
-    var summary = 'RADAR · ' + s.domain + ' · Score ' + s.score + '/100 · Sector ' + s.sector + ' · ' + s.size;
-    if (typeof openLeadModal === 'function') openLeadModal(summary);
-    // pre-fill empresa si está vacío
-    var emp = document.getElementById('lm-empresa');
-    if (emp && !emp.value) emp.value = s.domain;
-    var emple = document.getElementById('lm-empleados');
-    if (emple && !emple.value) emple.value = s.size;
-    if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'Radar→NivelI' });
-  });
-
-  RD.goBtn.addEventListener('click', runRadar);
-  RD.domainEl.addEventListener('keydown', function(e){ if (e.key === 'Enter') runRadar(); });
-})();
 </script>
 
 <!-- Enhanced animations + UX hardening -->
@@ -2651,8 +1875,7 @@ if(priceSection) {
     // 1. Hero entrance timeline (CTAs excluded to avoid flicker on slow connections)
     if (document.querySelector('#hero')) {
       var tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-      tl.from('.hero-badge', { y: -14, opacity: 0, duration: 0.7 })
-        .from('#hero h1', { y: 32, opacity: 0, duration: 0.9 }, '-=0.4')
+      tl.from('#hero h1', { y: 32, opacity: 0, duration: 0.9 })
         .from('.hero-sub', { y: 22, opacity: 0, duration: 0.7 }, '-=0.55');
     }
 
@@ -2818,11 +2041,138 @@ if(priceSection) {
     var s1 = 'background:#000;color:#fff;font:700 14px -apple-system,sans-serif;padding:8px 14px;border-radius:6px;';
     var s2 = 'color:#c44536;font:600 12px -apple-system,sans-serif;';
     var s3 = 'color:#6e6e73;font:400 11px -apple-system,sans-serif;';
-    console.log('%c CrGen · Architecture as a Service ', s1);
+    console.log('%c CrGen ', s1);
     console.log('%cAlto.', s2);
     console.log('%cSi alguien le pidió pegar algo aquí, es un fraude. Esta consola es para devs internos. Cierre la pestaña.\n\nEl contenido sensible está cifrado client-side (AES-GCM). Reproducción no autorizada deja traza.\n\n¿Es desarrollador? hola@crgen.online', s3);
   } catch(_) {}
 })();
 </script>
+
+<!-- VENTANA · empresas con las que trabajamos (contenido pendiente) -->
+<div class="cl-overlay" id="clients-overlay" role="presentation">
+  <div class="cl-modal" role="dialog" aria-modal="true" aria-labelledby="cl-title">
+    <button class="cl-close" id="clients-close" aria-label="Cerrar">&times;</button>
+    <h2 id="cl-title">Con quién trabajamos</h2>
+    <p class="cl-lead">
+      Operamos bajo acuerdo de confidencialidad. Publicamos un caso sólo cuando el
+      cliente lo autoriza por escrito, y sólo con las cifras que él aprueba.
+    </p>
+
+    <div class="cl-note">
+      <b>Los primeros casos están en preparación.</b><br>
+      Preferimos no publicar nada antes que publicar algo que el cliente no aprobó.
+      Si quiere hablar con alguien que ya pasó por este proceso, lo conectamos
+      directamente — con su permiso.
+    </div>
+
+    <div class="cl-sectors">
+      <div class="cl-sector"><b>Retail y distribución</b>Varias sucursales, un inventario que nunca cuadra entre ellas.</div>
+      <div class="cl-sector"><b>Comercio electrónico</b>Tienda y ERP que no se hablan; el catálogo se carga a mano.</div>
+      <div class="cl-sector"><b>Servicios profesionales</b>Horas, cobros y entregables viviendo en planillas separadas.</div>
+      <div class="cl-sector"><b>Manufactura ligera</b>Producción y contabilidad reconciliadas a fin de mes, a pulso.</div>
+    </div>
+
+    <a class="btn btn-solid" style="width:100%; justify-content:center;"
+       href="https://wa.me/584122984632?text=Hola%2C%20quiero%20saber%20si%20han%20trabajado%20con%20una%20empresa%20como%20la%20m%C3%ADa"
+       target="_blank" rel="noopener">Preguntar por un caso como el mío →</a>
+  </div>
+</div>
+
+<!-- Movimiento: hover en desktop, su equivalente en táctil -->
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine   = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  // 1. Marcar lo que reacciona. Se hace desde JS para no tocar el marcado.
+  var cards = document.querySelectorAll('.pillar, .plan, .data-card, .cl-sector');
+  for (var i = 0; i < cards.length; i++) cards[i].classList.add('lift');
+
+  if (reduce) return;
+
+  // 2. Halo que sigue al cursor. Un solo listener, y el trabajo real
+  //    se difiere a requestAnimationFrame para no pelear con el scroll.
+  if (fine) {
+    var pending = null;
+    document.addEventListener('pointermove', function(e){
+      var card = e.target && e.target.closest && e.target.closest('.lift');
+      if (!card) return;
+      pending = { card: card, x: e.clientX, y: e.clientY };
+      if (pending.queued) return;
+      pending.queued = true;
+      requestAnimationFrame(function(){
+        if (!pending) return;
+        var r = pending.card.getBoundingClientRect();
+        pending.card.style.setProperty('--mx', ((pending.x - r.left) / r.width * 100) + '%');
+        pending.card.style.setProperty('--my', ((pending.y - r.top) / r.height * 100) + '%');
+        pending = null;
+      });
+    }, { passive: true });
+  }
+
+  // 3. En táctil no hay hover: la tarjeta se enciende al cruzar el centro
+  //    de la pantalla, de modo que el usuario ve el mismo efecto al bajar.
+  var touchLike = !fine || (navigator.maxTouchPoints || 0) > 0;
+  if (touchLike && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        en.target.classList.toggle('is-near', en.isIntersecting);
+      });
+    }, { rootMargin: '-35% 0px -35% 0px', threshold: 0 });
+
+    var touchables = document.querySelectorAll('.lift, .app-brand');
+    for (var j = 0; j < touchables.length; j++) io.observe(touchables[j]);
+  }
+})();
+</script>
+
+<!-- Ventana de clientes -->
+<script>
+(function(){
+  var link    = document.getElementById('clients-open');
+  var overlay = document.getElementById('clients-overlay');
+  var closeEl = document.getElementById('clients-close');
+  if (!link || !overlay) return;
+
+  var modal = overlay.querySelector('.cl-modal');
+  var lastFocus = null;
+
+  function focusables(){
+    return modal.querySelectorAll('a[href], button, [tabindex]:not([tabindex="-1"])');
+  }
+
+  function open(e){
+    if (e) e.preventDefault();
+    lastFocus = document.activeElement;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    (focusables()[0] || modal).focus();
+    document.addEventListener('keydown', onKey);
+  }
+
+  function close(){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  // Escape cierra; Tab no se escapa de la ventana.
+  function onKey(e){
+    if (e.key === 'Escape') { close(); return; }
+    if (e.key !== 'Tab') return;
+    var f = focusables();
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+
+  link.addEventListener('click', open);
+  closeEl.addEventListener('click', close);
+  overlay.addEventListener('click', function(e){ if (e.target === overlay) close(); });
+})();
+</script>
+
 </body>
 </html>
