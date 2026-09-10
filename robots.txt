@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /users.html
+Disallow: /engine/
+Disallow: /clients/
+Disallow: /briefs/
+Disallow: /reports/
+
+Sitemap: https://crgen.online/sitemap.xml
