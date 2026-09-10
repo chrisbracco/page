@@ -47,7 +47,7 @@
         { "@type": "Country", "name": "Argentina" }
       ],
       "knowsAbout": ["Data Architecture", "Process Automation", "ERP Integration", "Business Intelligence", "Digital Transformation"],
-      "priceRange": "$200 - $1500+",
+      "priceRange": "$400 - $3000+",
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "sales",
@@ -70,7 +70,7 @@
       "provider": { "@id": "https://crgen.online/#org" },
       "description": "Diagnóstico Profundo · 12+ hallazgos priorizados, estimación de pérdidas en USD, plan de acción Nivel II. Entrega 5 días.",
       "areaServed": "Latin America",
-      "offers": { "@type": "Offer", "price": "200", "priceCurrency": "USD" }
+      "offers": { "@type": "Offer", "price": "400", "priceCurrency": "USD" }
     },
     {
       "@type": "Service",
@@ -78,7 +78,7 @@
       "provider": { "@id": "https://crgen.online/#org" },
       "description": "Atlas Documental · diccionario de datos + 1 conector ERP funcional + runbook + 30 días estabilización. Despliegue 3-5 semanas.",
       "areaServed": "Latin America",
-      "offers": { "@type": "Offer", "price": "1500", "priceCurrency": "USD" }
+      "offers": { "@type": "Offer", "price": "3000", "priceCurrency": "USD" }
     },
     {
       "@type": "Service",
@@ -181,6 +181,17 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+input, textarea, select, [contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; }
@@ -623,7 +634,7 @@ p { line-height: 1.65; color: var(--ink); letter-spacing: -0.005em; }
     box-shadow: 0 40px 100px rgba(0,0,0,0.12), 0 0 80px rgba(255,255,255,1);
     z-index: 10;
   }
-  /* Resplandor especial plan Nivel 1 ($200) */
+  /* Resplandor especial plan Nivel 1 ($400) */
   .plan-grid .plan.plan-200:hover {
     box-shadow: 0 40px 100px rgba(52, 199, 89, 0.2), 0 0 80px rgba(52, 199, 89, 0.25);
     border-color: rgba(52, 199, 89, 0.5);
@@ -1056,7 +1067,6 @@ footer a:hover { color: var(--black); }
     <li><a href="#pilares">Los 4 pilares</a></li>
     <li><a href="#metodo">Cómo trabajamos</a></li>
     <li><a href="#planes">Planes</a></li>
-    <li><a href="users.html" class="nav-portal" aria-label="Acceso clientes">Acceso clientes</a></li>
     <li><a href="https://wa.me/584122984632?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20CrGen" target="_blank" rel="noopener" class="nav-pill track-whatsapp">Escribir por WhatsApp →</a></li>
   </ul>
 </nav>
@@ -1074,11 +1084,6 @@ footer a:hover { color: var(--black); }
     <p class="hero-sub">
       Conectamos los sistemas que su empresa ya usa, eliminamos el caos de planillas y reportes manuales, y dejamos su operación corriendo bajo un solo flujo auditable. Sin migrar nada. Sin licencias forzadas.
     </p>
-
-    <div class="cta-row">
-      <a href="https://wa.me/584122984632?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20CrGen" class="btn btn-solid track-whatsapp" target="_blank" rel="noopener">Escribir por WhatsApp →</a>
-      <a href="#pilares" class="btn btn-ghost">Ver Arquitectura</a>
-    </div>
 
   </div>
 </section>
@@ -1232,7 +1237,7 @@ footer a:hover { color: var(--black); }
       <strong id="sym-count-label" style="font-size: 1.1rem; font-weight: 800; letter-spacing: -0.025em; color: var(--black);">Marque las señales que le suceden</strong>
       <div id="sym-verdict" style="font-size: 0.88rem; color: var(--gray); margin-top: 4px;">Al marcar 3 o más, tiene sentido que hablemos.</div>
     </div>
-    <a href="#" onclick="openAuditApp(event)" class="btn btn-solid" id="sym-cta" style="opacity: 0.4; pointer-events: none;">Agendar diagnóstico →</a>
+    <a href="#" onclick="event.preventDefault(); openLeadModal('DIAGNÓSTICO PROFUNDO Nivel I ($400)');" class="btn btn-solid" id="sym-cta" style="opacity: 0.4; pointer-events: none;">Agendar diagnóstico →</a>
   </div>
 </section>
 
@@ -1634,7 +1639,7 @@ footer a:hover { color: var(--black); }
       <div class="rd-findings">
         <h4>3 hallazgos visibles · <b id="rd-hidden">9</b> bloqueados</h4>
         <ul id="rd-findings-list"></ul>
-        <div class="rd-locked">Hallazgos restantes (incluye fugas de procesos, dependencia de empleados clave, riesgos de compliance) sólo se entregan en el <b>Diagnóstico Profundo Nivel I — $200 USD</b>.</div>
+        <div class="rd-locked">Hallazgos restantes (incluye fugas de procesos, dependencia de empleados clave, riesgos de compliance) sólo se entregan en el <b>Diagnóstico Profundo Nivel I — $400 USD</b>.</div>
       </div>
       <button id="rd-cta" type="button">Desbloquear los hallazgos restantes — Solicitar Nivel I →</button>
     </div>
@@ -1648,7 +1653,7 @@ footer a:hover { color: var(--black); }
   <div class="section-header">
     <p class="eyebrow">La pregunta obvia</p>
     <h2>¿Por qué no simplemente<br>usar Zapier o una gran consultora?</h2>
-    <p class="lead">Las herramientas automatizan tareas. Las grandes consultoras cobran entrada de $20.000 USD. CrGen arquitectura flujos para PYMEs LATAM desde $200 — sin reemplazar lo que ya usa.</p>
+    <p class="lead">Las herramientas automatizan tareas. Las grandes consultoras cobran entrada de $20.000 USD. CrGen arquitectura flujos para PYMEs LATAM desde $400 — sin reemplazar lo que ya usa.</p>
   </div>
 
   <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 40px;">
@@ -1659,7 +1664,7 @@ footer a:hover { color: var(--black); }
         <span style="font-size:0.72rem; color:#34C759; font-weight:700; font-family:'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:0.08em;">Recomendado</span>
       </div>
       <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; font-size:0.88rem; color:#1d1d1f;">
-        <li style="display:flex; gap:10px;"><span style="color:#34C759; font-weight:800; flex-shrink:0;">✓</span><span>Diagnóstico desde <b>$200</b> — entrega en 5 días</span></li>
+        <li style="display:flex; gap:10px;"><span style="color:#34C759; font-weight:800; flex-shrink:0;">✓</span><span>Diagnóstico desde <b>$400</b> — entrega en 5 días</span></li>
         <li style="display:flex; gap:10px;"><span style="color:#34C759; font-weight:800; flex-shrink:0;">✓</span><span>Sin reemplazar sus sistemas actuales</span></li>
         <li style="display:flex; gap:10px;"><span style="color:#34C759; font-weight:800; flex-shrink:0;">✓</span><span>Integra ERPs locales: Norkut, A2, Profit Plus, SAINT</span></li>
         <li style="display:flex; gap:10px;"><span style="color:#34C759; font-weight:800; flex-shrink:0;">✓</span><span>Estrategia de datos incluida, no solo tuberías</span></li>
@@ -1733,7 +1738,7 @@ footer a:hover { color: var(--black); }
       <span class="plan-tag" style="font-size: 0.95rem; font-weight: 800; color: var(--black); line-height: 1.3;">NIVEL I · DIAGNÓSTICO PROFUNDO</span>
       <div style="margin: 20px 0;">
         <div class="plan-price timer-price" style="margin-top: 12px;">
-          <b>$200</b><span class="plan-unit">USD</span>
+          <b>$400</b><span class="plan-unit">USD</span>
           <span style="font-size:0.85rem; color:#34C759; margin-left:8px; font-weight:800;">(-25% HOY)</span>
         </div>
         <div class="offer-expired" style="display:none; font-size: 0.85rem; color: var(--gray); background: rgba(0,0,0,0.04); padding: 8px 12px; border-radius: 8px;">
@@ -1748,7 +1753,7 @@ footer a:hover { color: var(--black); }
         <li>Notas del Arquitecto + plan de acción Nivel II</li>
       </ul>
       <div class="plan-hours" style="margin: 16px 0 12px;"><span class="mono">Entrega en 5 días hábiles</span></div>
-      <button onclick="openLeadModal('NIVEL I ($200)')" class="btn btn-ghost plan-cta" style="width: 100%; justify-content: center;">Solicitar Mapeo →</button>
+      <button onclick="openLeadModal('NIVEL I ($400)')" class="btn btn-ghost plan-cta" style="width: 100%; justify-content: center;">Solicitar Mapeo →</button>
     </div>
 
     <!-- FICHA 3: NIVEL II -->
@@ -1757,7 +1762,7 @@ footer a:hover { color: var(--black); }
       <span class="plan-tag" style="font-size: 0.95rem; font-weight: 800; color: var(--black); line-height: 1.3;">NIVEL II · ARQUITECTURA ATLAS DOCUMENTAL</span>
       <div style="margin: 20px 0;">
         <div class="plan-price timer-price" style="margin-top: 12px;">
-          <b>$1.500</b><span class="plan-unit">USD</span>
+          <b>$3.000</b><span class="plan-unit">USD</span>
           <span style="font-size:0.85rem; color:#34C759; margin-left:8px; font-weight:800;">(-25% HOY)</span>
         </div>
         <div class="offer-expired" style="display:none; font-size: 0.85rem; color: var(--gray); background: rgba(0,0,0,0.04); padding: 8px 12px; border-radius: 8px;">
@@ -1772,7 +1777,7 @@ footer a:hover { color: var(--black); }
         <li>30 días de estabilización (incident SLA)</li>
       </ul>
       <div class="plan-hours" style="margin: 16px 0 12px;"><span class="mono">Despliegue en 3 a 5 semanas</span></div>
-      <button onclick="openLeadModal('NIVEL II ($1.500)')" class="btn btn-solid plan-cta" style="width: 100%; justify-content: center;">Iniciar Implementación →</button>
+      <button onclick="openLeadModal('NIVEL II ($3.000)')" class="btn btn-solid plan-cta" style="width: 100%; justify-content: center;">Iniciar Implementación →</button>
     </div>
 
     <!-- FICHA 4: NIVEL III -->
@@ -2643,13 +2648,12 @@ if(priceSection) {
     gsap.registerPlugin(ScrollTrigger);
     var narrow = window.innerWidth < 760;
 
-    // 1. Hero entrance timeline
+    // 1. Hero entrance timeline (CTAs excluded to avoid flicker on slow connections)
     if (document.querySelector('#hero')) {
       var tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
       tl.from('.hero-badge', { y: -14, opacity: 0, duration: 0.7 })
         .from('#hero h1', { y: 32, opacity: 0, duration: 0.9 }, '-=0.4')
-        .from('.hero-sub', { y: 22, opacity: 0, duration: 0.7 }, '-=0.55')
-        .from('.cta-row .btn', { y: 16, opacity: 0, duration: 0.55, stagger: 0.08 }, '-=0.45');
+        .from('.hero-sub', { y: 22, opacity: 0, duration: 0.7 }, '-=0.55');
     }
 
     // 2. Section header reveal (eyebrow + h2 + lead)
@@ -2790,12 +2794,22 @@ if(priceSection) {
     if (ctrl && shift && (k === 'I' || k === 'i' || k === 'J' || k === 'j' || k === 'C' || k === 'c')) { e.preventDefault(); return; }
   });
 
-  // Block selection on cards/chrome (allow inputs + content)
+  // Block ALL selection except inputs and editable
   document.addEventListener('selectstart', function(e){
     var t = e.target;
     if (!t) return;
     if (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable) return;
-    if (t.closest('p, li, h1, h2, h3, h4, h5, span.muted, .hero-sub, .lead, .calc-output')) return;
+    e.preventDefault();
+  });
+  // Block copy/cut programmatically too
+  document.addEventListener('copy', function(e){
+    var t = e.target;
+    if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+    e.preventDefault();
+  });
+  document.addEventListener('cut', function(e){
+    var t = e.target;
+    if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
     e.preventDefault();
   });
 
