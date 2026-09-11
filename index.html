@@ -21,7 +21,7 @@
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=(), payment=()">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com https://connect.facebook.net https://www.clarity.ms https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://api.web3forms.com https://api.counterapi.dev https://www.google-analytics.com https://*.clarity.ms https://*.facebook.net https://www.googletagmanager.com; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com https://connect.facebook.net https://www.clarity.ms https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://api.web3forms.com https://www.google-analytics.com https://*.clarity.ms https://*.facebook.net https://www.googletagmanager.com; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <title>CrGen — Arquitectura de Datos Empresarial para PYMEs LATAM</title>
 <link rel="icon" href="assets/Logo.png" type="image/png">
 <!-- JSON-LD: ProfessionalService + WebSite + Services + Breadcrumb (anti-confusión CrowdGen/Appen) -->
@@ -142,19 +142,6 @@
 })();
 </script>
 
-<template id="__bundler_thumbnail">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
-    <defs>
-      <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#1d1d1f"/>
-        <stop offset="100%" stop-color="#2b2b30"/>
-      </linearGradient>
-    </defs>
-    <rect width="400" height="300" fill="url(#bg)"/>
-    <text x="200" y="155" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="64" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="-3">Cr<tspan fill="#a1a1a6">Gen</tspan></text>
-    <text x="200" y="195" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#8d8d92" text-anchor="middle" letter-spacing="2">ARCHITECTURE AS A SERVICE</text>
-  </svg>
-</template>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -226,43 +213,6 @@ input, textarea, select, [contenteditable="true"] {
   border: 1px solid rgba(255,255,255,0.15);
   box-shadow: inset 0 2px 4px rgba(255,255,255,0.4), inset 0 -2px 4px rgba(0,0,0,0.06), 0 24px 60px rgba(0,0,0,0.1);
 }
-
-/* Audit App Modal */
-#audit-modal { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: flex-start; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; padding: 12vh 20px 20px; overflow-y: auto; }
-#audit-modal.active { opacity: 1; pointer-events: auto; }
-.audit-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
-.audit-container { position: relative; width: 100%; max-width: 720px; background: var(--white); border-radius: 28px; padding: 48px; box-shadow: 0 32px 80px rgba(0,0,0,0.2); overflow: hidden; transform: translateY(20px); transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1); margin: auto; }
-#audit-modal.active .audit-container { transform: translateY(0); }
-.audit-close { position: absolute; top: 24px; right: 28px; background: none; border: none; font-size: 1.5rem; color: var(--gray-lt); cursor: pointer; transition: color 0.2s; }
-.audit-close:hover { color: var(--black); }
-.audit-step { display: none; }
-.audit-step.active { display: block; animation: slideUpFade 0.4s ease; }
-@keyframes slideUpFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-.audit-progress { display: flex; gap: 4px; margin-bottom: 32px; }
-.audit-progress-bar { height: 4px; flex: 1; background: var(--off-white); border-radius: 4px; }
-.audit-progress-bar.filled { background: var(--black); }
-.audit-header h3 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin-bottom: 12px; }
-.audit-header p { color: var(--gray); font-size: 1.1rem; margin-bottom: 32px; }
-.audit-options { display: flex; flex-direction: column; gap: 12px; }
-.audit-option { width: 100%; text-align: left; padding: 20px 24px; background: var(--off-white); border: 2px solid transparent; border-radius: 16px; font-size: 1.05rem; font-weight: 500; color: var(--black); cursor: pointer; transition: all 0.2s; display: flex; justify-content: space-between; align-items: center; }
-.audit-option:hover { background: var(--white); border-color: var(--black); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
-.audit-loader { display: none; text-align: center; padding: 60px 0; }
-.audit-loader.active { display: block; }
-.loader-spinner { width: 40px; height: 40px; border: 3px solid var(--off-white); border-top: 3px solid var(--black); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 24px; }
-@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-.audit-result { display: none; text-align: center; }
-.audit-result.active { display: block; animation: scaleUp 0.5s cubic-bezier(0.34,1.56,0.64,1); }
-@keyframes scaleUp { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
-.result-amount { font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 800; letter-spacing: -0.04em; color: var(--accent-warn); margin: 16px 0 8px; line-height: 1; }
-.audit-form { margin-top: 24px; display: flex; flex-direction: column; }
-.audit-form input { width: 100%; padding: 12px 0 20px; border: none; border-bottom: 2px solid var(--gray-xlt); background: transparent; font-size: 2.2rem; font-weight: 700; color: var(--black); transition: border-color 0.3s; border-radius: 0; box-shadow: none; font-family: inherit; }
-.audit-form input::placeholder { color: rgba(0,0,0,0.15); font-weight: 500; font-size: 1.6rem;}
-.audit-form input:focus { outline: none; border-bottom-color: var(--black); box-shadow: none; }
-.btn-next-audit { background: var(--black); color: white; padding: 22px; border-radius: 999px; font-size: 1.15rem; width: 100%; cursor: pointer; border: none; font-weight: 600; margin-top: 40px; transition: transform 0.2s, box-shadow 0.2s; display: flex; align-items: center; justify-content: space-between; }
-.btn-next-audit:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.15); }
-.btn-wa { background: #25D366; color: white; border: none; }
-.btn-wa:hover { background: #128C7E; transform: scale(1.02); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
-@media (max-width: 600px) { #audit-modal { padding: 20px 16px; align-items: flex-start; } .audit-container { padding: 32px 20px; border-radius: 20px; margin: 0 auto; } }
 
 /* Integrations Marquee */
 .logo-marquee {
@@ -355,8 +305,6 @@ h4 { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.025em; line-height
 p { line-height: 1.65; color: var(--ink); letter-spacing: -0.005em; }
 .section-header { margin-bottom: 56px; }
 .section-header h2 + .lead { margin-top: 18px; }
-.section-header.center { text-align: center; max-width: 760px; margin-left: auto; margin-right: auto; }
-.section-header.center .lead { margin-left: auto; margin-right: auto; }
 
 /* Hero */
 #hero {
@@ -388,65 +336,6 @@ p { line-height: 1.65; color: var(--ink); letter-spacing: -0.005em; }
 .btn-ghost { color: var(--black); border: 1px solid var(--rule); }
 .btn-ghost:hover { transform: scale(1.04); background: rgba(0,0,0,0.03); }
 
-/* Signal counter hero widget */
-.signal-widget {
-  margin: 56px auto 0; max-width: 540px;
-  padding: 20px 24px; border-radius: 20px;
-  display: flex; align-items: center; justify-content: space-between; gap: 20px;
-}
-.signal-widget .sw-copy { text-align: left; }
-.signal-widget .mono {
-  font-size: 0.64rem; color: var(--gray-lt); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
-  display: block; margin-bottom: 4px;
-}
-.signal-widget .sw-copy strong {
-  font-size: 1.02rem; font-weight: 700; letter-spacing: -0.025em; color: var(--black); display:block;
-}
-.signal-widget .sw-copy span { font-size: 0.82rem; color: var(--gray); }
-.signal-widget .btn { padding: 10px 18px; font-size: 0.85rem; }
-@media (max-width: 540px) { 
-  .signal-widget { flex-direction: column; text-align: center; gap: 16px; padding: 24px 20px; }
-  .signal-widget .sw-copy { text-align: center; }
-  .signal-widget .btn { width: 100%; justify-content: center; }
-}
-
-/* Symptoms */
-.symptom-list { display: flex; flex-direction: column; gap: 12px; }
-.symptom {
-  display: grid; grid-template-columns: 70px 1fr auto;
-  gap: 24px; align-items: center;
-  padding: 28px 32px; border-radius: 20px;
-  border: 1px solid var(--rule); background: #fff;
-  transition: background 0.25s, transform 0.25s;
-}
-.symptom:hover { background: #fafafa; transform: translateY(-2px); }
-@media (max-width: 720px) { .symptom { grid-template-columns: 56px 1fr; gap: 18px; padding: 22px 22px; } .symptom .sym-check { grid-column: 1 / span 2; } }
-
-.sym-num {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 800; font-size: 2rem; letter-spacing: -0.05em;
-  color: var(--black); line-height: 1;
-}
-.sym-body h4 { margin-bottom: 6px; }
-.sym-body p { font-size: 0.9rem; color: var(--gray); }
-
-.sym-check {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-family: "JetBrains Mono", monospace; font-size: 0.72rem;
-  color: var(--gray); letter-spacing: 0.06em; text-transform: uppercase;
-  padding: 8px 14px; border-radius: 999px; border: 1px solid var(--rule);
-  cursor: pointer; user-select: none;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
-}
-.sym-check .box {
-  width: 14px; height: 14px; border-radius: 4px; border: 1.5px solid var(--gray-lt);
-  display: inline-flex; align-items: center; justify-content: center;
-  transition: background 0.2s, border-color 0.2s;
-}
-.sym-check .box svg { opacity: 0; transition: opacity 0.15s; }
-.symptom.checked .sym-check { background: var(--black); color: var(--white); border-color: var(--black); }
-.symptom.checked .sym-check .box { background: var(--white); border-color: var(--white); }
-.symptom.checked .sym-check .box svg { opacity: 1; }
 
 /* Pillars (4) */
 .pillar-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
@@ -575,27 +464,7 @@ p { line-height: 1.65; color: var(--ink); letter-spacing: -0.005em; }
 .impact-stat:hover strong { color: #0071e3; }
 .impact-stat p { font-size: 0.82rem; color: var(--gray); line-height: 1.45; }
 
-/* Guarantee */
-.guarantee-card {
-  border-radius: 32px; padding: 56px 56px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
-}
-@media (max-width: 900px) { .guarantee-card { grid-template-columns: 1fr; gap: 36px; padding: 44px 32px; } }
-.guarantee-left h2 { font-size: 2.1rem; letter-spacing: -0.035em; line-height: 1.05; }
-.guarantee-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule); }
-.guarantee-list li {
-  display: grid; grid-template-columns: 96px 1fr; row-gap: 4px; column-gap: 16px;
-  padding: 18px 0; border-bottom: 1px solid var(--rule);
-}
-.g-day {
-  font-family: "JetBrains Mono", monospace; font-size: 0.72rem;
-  color: var(--gray-lt); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
-  grid-row: 1 / span 2; align-self: center;
-}
-.guarantee-list li strong { font-size: 1rem; font-weight: 800; letter-spacing: -0.025em; color: var(--black); }
-.g-desc { font-size: 0.86rem; color: var(--gray); line-height: 1.5; }
 
-/* Plans */
 /* Plans */
 .plan-grid {
   display: flex; gap: 16px; align-items: stretch; margin: 0 auto;
@@ -652,7 +521,6 @@ p { line-height: 1.65; color: var(--ink); letter-spacing: -0.005em; }
   color: var(--gray-lt); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
 }
 .plan h3 { font-size: 1.4rem; letter-spacing: -0.03em; }
-.plan-sub { font-size: 0.88rem; color: var(--gray); line-height: 1.5; }
 .plan-price {
   display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap;
   padding-top: 10px; border-top: 1px solid var(--rule);
@@ -678,10 +546,6 @@ p { line-height: 1.65; color: var(--ink); letter-spacing: -0.005em; }
   transform: rotate(-45deg);
 }
 .plan-cta { margin-top: auto; text-align: center; justify-content: center; }
-.plan-foot {
-  margin-top: 28px; font-size: 0.8rem; color: var(--gray); text-align: center;
-  max-width: 720px; margin-left: auto; margin-right: auto; line-height: 1.55;
-}
 
 /* CTA (Lead magnet) */
 #lead {
@@ -693,21 +557,6 @@ p { line-height: 1.65; color: var(--ink); letter-spacing: -0.005em; }
 .cta-panel h2 { margin-bottom: 18px; }
 .cta-panel .lead { margin: 0 auto 36px; max-width: 500px; }
 
-.cta-steps {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 0; margin-top: 44px; text-align: left;
-  border-top: 1px solid var(--rule);
-}
-@media (max-width: 680px) { .cta-steps { grid-template-columns: 1fr; } }
-.cta-step {
-  padding: 24px 22px;
-  border-right: 1px solid var(--rule);
-}
-.cta-step:last-child { border-right: none; }
-@media (max-width: 680px) { .cta-step { border-right: none; border-bottom: 1px solid var(--rule); } .cta-step:last-child { border-bottom: none; } }
-.cta-step .mono { font-family: "JetBrains Mono", monospace; font-size: 0.64rem; color: var(--gray-lt); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; display:block; margin-bottom: 8px; }
-.cta-step h4 { font-size: 0.95rem; margin-bottom: 6px; letter-spacing: -0.02em; }
-.cta-step p { font-size: 0.82rem; color: var(--gray); line-height: 1.5; }
 
 /* Footer */
 footer {
@@ -748,8 +597,7 @@ footer a:hover { color: var(--black); }
 /* === MOBILE PERFORMANCE OVERRIDES (Redmi-class GPUs) === */
 @media (max-width: 900px) {
   /* backdrop-filter es el peor enemigo del scroll en Android mid-range */
-  .crystal-1, .crystal-2, .crystal-3,
-  .audit-overlay {
+  .crystal-1, .crystal-2, .crystal-3 {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }
@@ -761,7 +609,7 @@ footer a:hover { color: var(--black); }
   /* Marquee: reduce duración no, pero quita filter+transition por logo */
   .marquee-track img, .marquee-track svg { transition: none; }
   /* Bordes finos suficientes; sombras pesadas reducidas */
-  .pillar, .plan, .method-card, .data-card, .calc-app {
+  .pillar, .plan, .method-card, .data-card {
     box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
   }
 }
@@ -1363,7 +1211,7 @@ footer a:hover { color: var(--black); }
       <div style="margin: 20px 0;">
         <div class="plan-price timer-price" style="margin-top: 12px;">
           <b>$400</b><span class="plan-unit">USD</span>
-          <span style="font-size:0.85rem; color:#34C759; margin-left:8px; font-weight:800;">(-25% HOY)</span>
+          <span class="timer-strike" style="font-size:0.85rem; color:#34C759; margin-left:8px; font-weight:800;">(-25% HOY)</span>
         </div>
         <div class="offer-expired" style="display:none; font-size: 0.85rem; color: var(--gray); background: rgba(0,0,0,0.04); padding: 8px 12px; border-radius: 8px;">
           Esta oferta ha expirado. Contáctenos.
@@ -1372,7 +1220,7 @@ footer a:hover { color: var(--black); }
       <ul class="plan-list" style="flex-grow: 1;">
         <li>Todo lo de la sesión Gratis</li>
         <li>Mapa de Arqueología de Datos</li>
-        <li>12+ hallazgos priorizados (vs 3 del Radar)</li>
+        <li>12+ hallazgos priorizados y cuantificados</li>
         <li>Estimación de pérdidas operativas en USD</li>
         <li>Notas del Arquitecto + plan de acción Nivel II</li>
       </ul>
@@ -1387,7 +1235,7 @@ footer a:hover { color: var(--black); }
       <div style="margin: 20px 0;">
         <div class="plan-price timer-price" style="margin-top: 12px;">
           <b>$3.000</b><span class="plan-unit">USD</span>
-          <span style="font-size:0.85rem; color:#34C759; margin-left:8px; font-weight:800;">(-25% HOY)</span>
+          <span class="timer-strike" style="font-size:0.85rem; color:#34C759; margin-left:8px; font-weight:800;">(-25% HOY)</span>
         </div>
         <div class="offer-expired" style="display:none; font-size: 0.85rem; color: var(--gray); background: rgba(0,0,0,0.04); padding: 8px 12px; border-radius: 8px;">
           Esta oferta ha expirado. Contáctenos.
@@ -1451,6 +1299,7 @@ footer a:hover { color: var(--black); }
   <div class="crystal-2" style="background:#fff; border-radius:24px; max-width:540px; width:100%; max-height:90vh; overflow-y:auto; padding:32px 40px; position:relative; box-shadow:0 24px 60px rgba(0,0,0,0.2);">
     <button onclick="closeLeadModal()" style="position:absolute; top:20px; right:24px; font-size:1.8rem; background:none; border:none; cursor:pointer; color:var(--gray);">×</button>
     <div style="margin-bottom:24px; text-align:center;">
+      <p id="lead-plan-name" style="display:inline-block; margin:0 0 14px; padding:7px 16px; border-radius:999px; background:var(--black); color:#fff; font-size:0.78rem; font-weight:800; letter-spacing:0.04em;">DIAGNÓSTICO GRATUITO</p>
       <h3 style="font-size:1.6rem; font-weight:800; line-height:1.1;">Solicite su Arquitectura</h3>
       <p style="font-size:0.9rem; color:var(--gray); margin-top:8px;">Complete los datos básicos para procesar su diagnóstico o reservar su sesión. Esto nos da contexto inicial.</p>
     </div>
@@ -1521,11 +1370,10 @@ footer a:hover { color: var(--black); }
 <script>
 // Lead Form Logic
 function openLeadModal(planName) {
-  if (planName) {
-    document.getElementById('lead-plan-name').textContent = planName;
-  } else {
-    document.getElementById('lead-plan-name').textContent = 'DIAGNÓSTICO GRATUITO';
-  }
+  // Defensivo: si el marcado cambia y la etiqueta desaparece, el modal
+  // debe seguir abriendo. Antes un null aquí mataba TODOS los CTA.
+  const tag = document.getElementById('lead-plan-name');
+  if (tag) tag.textContent = planName || 'DIAGNÓSTICO GRATUITO';
   const modal = document.getElementById('lead-modal');
   modal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
@@ -1577,7 +1425,8 @@ function submitLeadModal() {
     sector: document.getElementById('lm-sector').value.trim()
   };
   const sistemas = Array.from(document.querySelectorAll('.lm-sys:checked')).map(e => e.value);
-  const plan = document.getElementById('lead-plan-name').textContent;
+  const planEl = document.getElementById('lead-plan-name');
+  const plan = planEl ? planEl.textContent : 'DIAGNÓSTICO GRATUITO';
 
   // Validación mínima: sin nombre ni teléfono el lead no sirve para nada.
   if (!data.nombre || !data.telefono) {
@@ -1671,37 +1520,8 @@ else flushLeadQueue();
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.symptom, .pillar, .data-card, .method-card, .impact-stat, .guarantee-card, .plan, .cta-panel').forEach(el => {
+document.querySelectorAll('.pillar, .data-card, .method-card, .impact-stat, .plan, .cta-panel').forEach(el => {
   el.classList.add('sr'); io.observe(el);
-});
-
-// Symptom checker
-const symptoms = document.querySelectorAll('.symptom');
-const countLabel = document.getElementById('sym-count-label');
-const verdict = document.getElementById('sym-verdict');
-const cta = document.getElementById('sym-cta');
-
-function updateCount() {
-  const count = document.querySelectorAll('.symptom.checked').length;
-  if (count === 0) {
-    countLabel.textContent = 'Marque las señales que le suceden';
-    verdict.textContent = 'Al marcar 3 o más, tiene sentido que hablemos.';
-    cta.style.opacity = '0.4';
-    cta.style.pointerEvents = 'none';
-  } else if (count < 3) {
-    countLabel.textContent = count + ' de 5 señales marcadas';
-    verdict.textContent = 'Aún con 1 o 2 señales, vale la pena revisar. El desorden crece rápido.';
-    cta.style.opacity = '0.7';
-    cta.style.pointerEvents = 'auto';
-  } else {
-    countLabel.textContent = count + ' de 5 señales · definitivamente toca hablar';
-    verdict.textContent = 'Su operación ya está pagando el costo del desorden. Agende el diagnóstico.';
-    cta.style.opacity = '1';
-    cta.style.pointerEvents = 'auto';
-  }
-}
-symptoms.forEach(s => {
-  s.addEventListener('click', () => { s.classList.toggle('checked'); updateCount(); });
 });
 
 // Floating dock + Nav shrink unificados con rAF throttle (perf móvil)
@@ -1968,14 +1788,7 @@ if(priceSection) {
       });
     }
 
-    // 7. Symptom card pop on toggle (visual feedback)
-    document.querySelectorAll('.symptom').forEach(function(s){
-      s.addEventListener('click', function(){
-        gsap.fromTo(s, { scale: 0.96 }, { scale: 1, duration: 0.35, ease: 'back.out(2)' });
-      });
-    });
-
-    // 8. Plan price magnetic on hover
+    // 7. Plan price magnetic on hover
     document.querySelectorAll('.plan-price b').forEach(function(p){
       var parent = p.closest('.plan');
       if (!parent) return;
@@ -1984,12 +1797,6 @@ if(priceSection) {
       });
     });
 
-    // 9. ScrollTrigger refresh on dynamic content (radar result)
-    var resultBox = document.getElementById('radar-result');
-    if (resultBox) {
-      var mo = new MutationObserver(function(){ ScrollTrigger.refresh(); });
-      mo.observe(resultBox, { childList: true, subtree: true });
-    }
   }
   if (window.gsap && window.ScrollTrigger) init();
   else if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
